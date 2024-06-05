@@ -1,0 +1,47 @@
+---
+import Card from '../../components/Card.astro';
+import { getLangFromUrl, useTranslations, LOCALES } from '../../i18n/utils';
+import Layout from '../../layouts/Layout.astro';
+
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+export async function getStaticPaths() {
+  return Object.keys(LOCALES).map((lang) => {
+    return { params: { lang } };
+  });
+}
+---
+
+<Layout title={t("layout.test")}>
+	<main class="container mx-auto">
+		<h1 class="text-5xl font-semibold mb-4">Welcome to the minimal <span class="text-primary"><br/>Starter template</span></h1>
+		<p class="instructions">
+			To get started, open the directory <code>src/pages</code> in your project.<br />
+			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+		</p>
+		<ul role="list" class="grid grid-cols-2 gap-6 grid-rows-2">
+			<Card
+				href="https://docs.astro.build/"
+				title="Documentation"
+				body="Learn how Astro works and explore the official API docs."
+			/>
+			<Card
+				href="https://astro.build/integrations/"
+				title="Integrations"
+				body="Supercharge your project with new frameworks and libraries."
+			/>
+			<Card
+				href="https://astro.build/themes/"
+				title="Themes"
+				body="Explore a galaxy of community-built starter themes."
+			/>
+			<Card
+				href="https://astro.build/chat/"
+				title="Community"
+				body="Come say hi to our amazing Discord community. ❤️"
+			/>
+		</ul>
+	</main>
+</Layout>

@@ -1,0 +1,15 @@
+---
+import { getLocalizedPathname } from "../i18n/utils";
+
+const { language, class: className, ...props } = Astro.props;
+const { pathname } = Astro.url;
+
+const lang = Astro.params?.lang || "nl";
+const isActive = language === lang;
+
+const href = getLocalizedPathname(pathname, language);
+---
+
+<a href={href} class:list={[className, { active: isActive }]} {...props}>
+  {language}
+</a>
