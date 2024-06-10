@@ -1,8 +1,7 @@
 ---
-import Card from '../../components/Card.astro';
-import { getLangFromUrl, useTranslations, LOCALES } from '../../i18n/utils';
-import Layout from '../../layouts/Layout.astro';
-
+import IconCard from "../../components/IconCard.astro";
+import { getLangFromUrl, useTranslations, LOCALES } from "../../i18n/utils";
+import Layout from "../../layouts/Layout.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -14,34 +13,60 @@ export async function getStaticPaths() {
 }
 ---
 
-<Layout title={t("layout.test")}>
-	<main class="container mx-auto">
-		<h1 class="text-5xl font-semibold mb-4">Welcome to the minimal <span class="text-primary"><br/>Starter template</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="grid grid-cols-2 gap-6 grid-rows-2">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+<Layout title={t("layout.test")} lang={lang}>
+  <main class="container mx-auto">
+    <section class="flex items-center gap-8">
+      <div>
+        <h1>
+          <span class="fancy">Spark</span>, the best minimal astro starter
+          template!
+        </h1>
+        <p>
+          Launch astro projects with ease and style. Minimalist design, maximum
+          functionality. Whether seasoned or new, Spark streamlines your
+          development for stunning astro websites.
+        </p>
+      </div>
+      <div class="relative hidden md:block">
+        <img src="/favicon.svg" alt="spark logo" />
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-h2">Integrations</h2>
+      <p>Click on a card below to open the intergation documentation.</p>
+      <ul class="mb-4 flex gap-4 py-4 overflow-x-scroll w-full">
+        <IconCard
+          href="https://docs.astro.build/en/guides/integrations-guide/alpinejs/"
+          title="alpine.js"
+          imgHref="/icons/alpinejs.svg"
+          imgAlt="alpine.js integration guide"
+        />
+        <IconCard
+          href="https://docs.astro.build/en/guides/integrations-guide/mdx/"
+          title="MDX"
+          imgHref="/icons/mdx.svg"
+          imgAlt="MDX integration guide"
+        />
+        <IconCard
+          href="https://docs.astro.build/en/guides/integrations-guide/sitemap/"
+          title="sitemap"
+          imgHref="/icons/sitemap.svg"
+          imgAlt="sitemap integration guide"
+        />
+        <IconCard
+          href="https://docs.astro.build/en/guides/integrations-guide/tailwind/"
+          title="tailwind"
+          imgHref="/icons/tailwind.svg"
+          imgAlt="tailwind integration guide"
+        />
+        <IconCard
+          href="https://docs.astro.build/en/guides/integrations-guide/vercel/"
+          title="vercel"
+          imgHref="/icons/vercel.svg"
+          imgAlt="vercel integration guide"
+        />
+      </ul>
+    </section>
+  </main>
 </Layout>

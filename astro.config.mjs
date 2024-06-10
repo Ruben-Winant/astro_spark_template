@@ -4,9 +4,14 @@ import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import alpinejs from "@astrojs/alpinejs";
 import { DEFAULT_LOCALE, LOCALES } from "./src/i18n/utils";
+import vercel from "@astrojs/vercel/serverless";
 
+import collapsePlugin from "@alpinejs/collapse";
+
+// https://astro.build/config
 export default defineConfig({
-  site: "http://localhost:4321/", // todo - add site for sitemap
+  site: "http://localhost:4321/",
+  // todo - add site for sitemap
   build: {
     format: "directory",
   },
@@ -19,6 +24,8 @@ export default defineConfig({
       },
     }),
     mdx(),
-    alpinejs(),
+    alpinejs({ entrypoint: "/src/entrypoint" }),
   ],
+  output: "server",
+  adapter: vercel(),
 });

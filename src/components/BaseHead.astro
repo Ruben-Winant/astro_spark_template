@@ -2,37 +2,40 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import {
-	LOCALES,
-	pathNameIsInLanguage,
-	DEFAULT_LOCALE,
-	getLocalizedPathname,
+  LOCALES,
+  pathNameIsInLanguage,
+  DEFAULT_LOCALE,
+  getLocalizedPathname,
 } from "../i18n/utils";
 
 interface Props {
-	title: string;
-	description: string;
-	image?: string;
-	lang: string;
+  title: string;
+  description: string;
+  image?: string;
+  lang: string;
 }
 
-const canonicalPathname = pathNameIsInLanguage(Astro.url.pathname, DEFAULT_LOCALE)
-	? Astro.url.pathname
-	: getLocalizedPathname(Astro.url.pathname, DEFAULT_LOCALE);
+const canonicalPathname = pathNameIsInLanguage(
+  Astro.url.pathname,
+  DEFAULT_LOCALE
+)
+  ? Astro.url.pathname
+  : getLocalizedPathname(Astro.url.pathname, DEFAULT_LOCALE);
 const canonicalURL = new URL(canonicalPathname, Astro.site);
 
 const {
-	lang,
-	title,
-	description,
-	image = "/blog-placeholder-1.jpg",
+  lang,
+  title,
+  description,
+  image = "/blog-placeholder-1.jpg",
 } = Astro.props;
 
 const alternateLang = Object.keys(LOCALES);
 const alternateLinks = alternateLang.map((lang: string) => {
-	return {
-		href: new URL(getLocalizedPathname(Astro.url.pathname, lang), Astro.site),
-		hreflang: lang,
-	};
+  return {
+    href: new URL(getLocalizedPathname(Astro.url.pathname, lang), Astro.site),
+    hreflang: lang,
+  };
 });
 ---
 
@@ -46,32 +49,32 @@ const alternateLinks = alternateLang.map((lang: string) => {
 
 <!-- Font preloads -->
 <link
-	rel="preload"
-	href="/fonts/Raleway.ttf"
-	as="font"
-	type="font/ttf"
-	crossorigin
+  rel="preload"
+  href="/fonts/Raleway.ttf"
+  as="font"
+  type="font/ttf"
+  crossorigin
 />
 <link
-	rel="preload"
-	href="/fonts/Raleway-Italic.ttf"
-	as="font"
-	type="font/ttf"
-	crossorigin
+  rel="preload"
+  href="/fonts/Raleway-Italic.ttf"
+  as="font"
+  type="font/ttf"
+  crossorigin
 />
 <link
-	rel="preload"
-	href="/fonts/OpenSans.ttf"
-	as="font"
-	type="font/ttf"
-	crossorigin
+  rel="preload"
+  href="/fonts/OpenSans.ttf"
+  as="font"
+  type="font/ttf"
+  crossorigin
 />
 <link
-	rel="preload"
-	href="/fonts/OpenSans-Italic.ttf"
-	as="font"
-	type="font/ttf"
-	crossorigin
+  rel="preload"
+  href="/fonts/OpenSans-Italic.ttf"
+  as="font"
+  type="font/ttf"
+  crossorigin
 />
 
 <!-- Canonical URL -->
@@ -79,9 +82,9 @@ const alternateLinks = alternateLang.map((lang: string) => {
 
 <!-- Alternate URLs -->
 {
-	alternateLinks.map(({ href, hreflang }) => (
-		<link rel="alternate" href={href} hreflang={hreflang} />
-	))
+  alternateLinks.map(({ href, hreflang }) => (
+    <link rel="alternate" href={href} hreflang={hreflang} />
+  ))
 }
 
 <!-- Primary Meta Tags -->

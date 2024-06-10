@@ -1,0 +1,48 @@
+---
+interface Props {
+  title: string;
+  imgHref: string;
+  imgAlt: string;
+  href: string;
+}
+
+const { href, title, imgHref, imgAlt } = Astro.props;
+---
+
+<li
+  class="bg-[length:200%_200%]
+  bg-left-bottom
+  hover:bg-right-top
+  focus-within:bg-right-top
+  bg-gradient-to-tr
+  from-elevated
+  from-50%
+  via-primary/40
+  via-75%
+  to-secondary/50
+  transition-all
+  duration-150
+  relative
+  rounded-md
+  aspect-square
+  w-full
+  min-w-24
+  max-w-24
+  md:max-w-32 group"
+>
+  <a
+    href={href}
+    target="_blank"
+    class="grid grid-cols-3 grid-rows-3 w-full h-full p-4 place-content-center relative"
+    ><div
+      class="w-full h-full absolute bg-[url(/noise.svg)] opacity-0 group-focus-within:opacity-50 group-hover:opacity-50 rounded-md"
+    >
+    </div>
+    <div class="w-4/5 row-span-2 col-span-3 mx-auto z-10">
+      <img src={imgHref} alt={imgAlt} class="w-full h-full m-auto" />
+    </div>
+    <span class="text-xs md:text-base col-span-3 mx-auto mt-auto z-10">
+      {title}
+    </span>
+  </a>
+</li>

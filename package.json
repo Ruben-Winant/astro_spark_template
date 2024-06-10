@@ -1,5 +1,5 @@
 {
-  "name": "tandarts-gerald",
+  "name": "astro-template",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,15 +10,22 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@alpinejs/collapse": "^3.14.0",
     "@astrojs/alpinejs": "^0.4.0",
     "@astrojs/check": "^0.7.0",
     "@astrojs/mdx": "^3.0.1",
     "@astrojs/sitemap": "^3.1.5",
     "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vercel": "^7.6.0",
     "@types/alpinejs": "^3.13.10",
     "alpinejs": "^3.14.0",
     "astro": "^4.9.3",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/alpinejs__collapse": "^3.13.4",
+    "prettier": "^3.3.1",
+    "prettier-plugin-astro": "^0.14.0"
   }
 }

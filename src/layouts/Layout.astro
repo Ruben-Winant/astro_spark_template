@@ -1,6 +1,7 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import LangSwitch from "../components/LangSwitch.astro";
+import Navigation from "../components/Navigation.astro";
 import { useTranslations, type UiType } from "../i18n/utils";
 
 const { title, lang, description } = Astro.props;
@@ -11,24 +12,112 @@ const today = new Date();
 
 <!doctype html>
 <html lang={lang} class="bg-white">
-	<head>
-		<BaseHead lang={lang} title={title} description={description} />
-	</head>
-	<header class="flex">
-		<nav class="flex">
-			<ul>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ul>
-		</nav>
-	</header>
-	<body>
-		<slot />
-	</body>
-	<footer class="bg-gray">
-		<LangSwitch language={lang} />
-		<span class="text-white">&copy; {today.getFullYear()} Ruben Winant. All rights reserved.</span>
-	</footer>
+  <head>
+    <BaseHead lang={lang} title={title} description={description} />
+  </head>
+  <header>
+    <Navigation />
+  </header>
+  <body>
+    <slot />
+  </body>
+  <footer class="bg-gray py-4">
+    <div class="container">
+      <div class="w-full flex justify-between">
+        <span></span>
+        <LangSwitch />
+      </div>
+      <small class="text-white">
+        &copy; {today.getFullYear()} Spark Theme. All rights reserved. This project
+        is independent of and not endorsed or sponsored by Astro or Tailwind Labs.
+        Created by
+        <b
+          ><a href="https://www.rubenwinant.be" target="_blank" class="link"
+            >Ruben Winant</a
+          ></b
+        > with Astro and Tailwind from the beautiful Bierbeek, Belgium.
+      </small>
+    </div>
+  </footer>
+
+  <style is:global>
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @layer base {
+      @font-face {
+        font-family: "Raleway";
+        src: url("/fonts/Raleway.ttf") format("truetype");
+      }
+      @font-face {
+        font-family: "Raleway-Italic";
+        src: url("/fonts/Raleway-Italic.ttf") format("truetype");
+      }
+      @font-face {
+        font-family: "OpenSans";
+        src: url("/fonts/OpenSans.ttf") format("truetype");
+      }
+      @font-face {
+        font-family: "OpenSans-Italic";
+        src: url("/fonts/OpenSans-Italic.ttf") format("truetype");
+      }
+
+      html:not(h1, h2, h3, h4, h5, h6) {
+        font-family: "OpenSans", system-ui, sans-serif;
+      }
+
+      h1 {
+        @apply font-raleway font-bold leading-tight text-4xl lg:text-5xl lg:leading-tight mb-4;
+      }
+
+      h2 {
+        @apply font-raleway font-bold leading-tight text-3xl lg:text-4xl lg:leading-tight mb-4;
+      }
+
+      h3 {
+        @apply font-raleway font-semibold leading-tight text-2xl lg:text-3xl lg:leading-tight mb-4;
+      }
+
+      h4 {
+        @apply font-raleway font-semibold leading-tight text-xl lg:text-2xl lg:leading-tight mb-4;
+      }
+
+      h5 {
+        @apply font-raleway font-medium leading-tight text-lg lg:text-xl lg:leading-tight mb-4;
+      }
+
+      h6 {
+        @apply font-raleway font-medium leading-tight text-base lg:text-lg lg:leading-tight mb-4;
+      }
+
+      small {
+        @apply font-raleway leading-tight text-xs mb-4;
+      }
+
+      p {
+        @apply leading-relaxed mb-4;
+      }
+
+      blockquote {
+        @apply italic leading-relaxed text-lg lg:text-xl mb-4;
+      }
+
+      caption {
+        @apply font-light leading-tight text-sm mb-4;
+      }
+
+      section {
+        @apply my-8;
+      }
+
+      .link {
+        @apply hover:fancy focus-within:fancy;
+      }
+
+      .fancy {
+        @apply bg-gradient-to-tr from-primary bg-secondary bg-clip-text text-transparent;
+      }
+    }
+  </style>
 </html>
