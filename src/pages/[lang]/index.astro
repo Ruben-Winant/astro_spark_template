@@ -6,6 +6,7 @@ import Layout from "../../layouts/Layout.astro";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+export const prerender = true;
 export async function getStaticPaths() {
   return Object.keys(LOCALES).map((lang) => {
     return { params: { lang } };
@@ -18,14 +19,9 @@ export async function getStaticPaths() {
     <section class="flex items-center gap-8">
       <div>
         <h1>
-          <span class="fancy">Spark</span>, the best minimal astro starter
-          template!
+          <span class="fancy">Spark</span>, {t("hero.title")}
         </h1>
-        <p>
-          Launch astro projects with ease and style. Minimalist design, maximum
-          functionality. Whether seasoned or new, Spark streamlines your
-          development for stunning astro websites.
-        </p>
+        <p>{t("hero.description")}</p>
       </div>
       <div class="relative hidden md:block">
         <img src="/favicon.svg" alt="spark logo" />
@@ -33,8 +29,8 @@ export async function getStaticPaths() {
     </section>
 
     <section>
-      <h2 class="text-h2">Integrations</h2>
-      <p>Click on a card below to open the intergation documentation.</p>
+      <h2 class="text-h2">{t("integration.title")}</h2>
+      <p>{t("integration.description")}</p>
       <ul class="mb-4 flex gap-4 py-4 overflow-x-scroll w-full">
         <IconCard
           href="https://docs.astro.build/en/guides/integrations-guide/alpinejs/"

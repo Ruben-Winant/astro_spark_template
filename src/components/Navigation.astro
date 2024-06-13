@@ -1,5 +1,12 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <nav class="container my-4 relative bg-white" x-data="{ expanded: false }">
-  <ul class="flex items-center justify-center gap-4 w-full z-10">
+  <ul class="flex items-center justify-center gap-8 w-full z-10">
     <li class="mr-auto">
       <a href="/" class="flex gap-1 font-semibold"
         ><img
@@ -11,10 +18,10 @@
       >
     </li>
     <li class="hidden md:block">
-      <a class="link" href="/components">Components</a>
+      <a class="link" href={`/${lang}/components/`}>{t("nav.components")}</a>
     </li>
     <li class="hidden md:block">
-      <a class="link" href="/faq">faq</a>
+      <a class="link" href={`/${lang}/faq/`}>{t("nav.faq")}</a>
     </li>
     <li class="flex md:hidden">
       <button type="button" class="w-8 my-auto" @click="expanded = !expanded">
@@ -66,18 +73,21 @@
     </li>
   </ul>
   <ul
-    x-cloak
     x-show="expanded"
+    x-cloak
     x-collapse
-    class="transition-all flex flex-col justify-center items-center gap-2 py-2 bg-white drop-shadow-md absolute left-0 right-0"
+    class="transition-all flex flex-col justify-center items-center gap-2 py-2 bg-white drop-shadow-md absolute left-0 right-0 md:hidden"
   >
     <li class="flex w-full">
-      <a class="link py-2 mx-auto w-full text-center" href="/components"
-        >Components</a
+      <a
+        class="link py-2 mx-auto w-full text-center"
+        href={`/${lang}/components/`}>{t("nav.components")}</a
       >
     </li>
     <li class="flex w-full">
-      <a class="link py-2 mx-auto w-full text-center" href="/faq">faq</a>
+      <a class="link py-2 mx-auto w-full text-center" href={`/${lang}/faq/`}
+        >{t("nav.faq")}</a
+      >
     </li>
   </ul>
 </nav>

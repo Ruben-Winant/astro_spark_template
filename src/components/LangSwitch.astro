@@ -10,13 +10,13 @@ const lang = Astro.params?.lang || "nl";
   {
     Object.keys(LOCALES).map((key) => (
       <li class="flex items-center text-white">
-        <a
-          class="w-full px-2 py-1"
-          class:list={[{ "fancy px-4 py-1 font-semibold": lang === key }]}
-          href={getLocalizedPathname(pathname, key)}
-        >
-          {key}
-        </a>
+        {lang === key ? (
+          <span class="fancy p-2 font-semibold">{key}</span>
+        ) : (
+          <a class="p-2" href={getLocalizedPathname(pathname, key)}>
+            {key}
+          </a>
+        )}
       </li>
     ))
   }

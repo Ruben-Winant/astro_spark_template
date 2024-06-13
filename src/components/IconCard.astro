@@ -39,7 +39,11 @@ const { href, title, imgHref, imgAlt } = Astro.props;
     >
     </div>
     <div class="w-4/5 row-span-2 col-span-3 mx-auto z-10">
-      <img src={imgHref} alt={imgAlt} class="w-full h-full m-auto" />
+      <img
+        src={imgHref}
+        alt={imgAlt}
+        class="w-full h-full m-auto brightness-0 group-hover:brightness-100"
+      />
     </div>
     <span class="text-xs md:text-base col-span-3 mx-auto mt-auto z-10">
       {title}

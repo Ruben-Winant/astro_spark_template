@@ -1,0 +1,35 @@
+---
+import FaqItem from "../../components/FaqItem.astro";
+import { getLangFromUrl, useTranslations, LOCALES } from "../../i18n/utils";
+import Layout from "../../layouts/Layout.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+export const prerender = true;
+export async function getStaticPaths() {
+  return Object.keys(LOCALES).map((lang) => {
+    return { params: { lang } };
+  });
+}
+---
+
+<Layout title={t("layout.test")} lang={lang}>
+  <main class="container mx-auto">
+    <section>
+      <h1>{t("faq.title")}</h1>
+      <p>{t("faq.description")}</p>
+    </section>
+
+    <section class="gap-8">
+      <FaqItem question="faq.why" answer="faq.reason_why" />
+      <FaqItem question="faq.who" answer="faq.reason_who" />
+      <FaqItem question="faq.tech" answer="faq.reason_tech" />
+      <a
+        href={`/${lang}/contact`}
+        class="block border border-gray/20 rounded-md w-full font-semibold px-6 py-4 link"
+        >{t("faq.contact")} <span class="fancy">{t("faq.contactUs")} </span></a
+      >
+    </section>
+  </main>
+</Layout>

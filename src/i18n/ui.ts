@@ -1,11 +1,88 @@
 export const ui = {
   en: {
     "layout.test": "hello",
+    "hero.title": " the best minimal astro starter template!",
+    "hero.description":
+      "Launch astro projects with ease and style. Minimalist design, maximum functionality. Whether seasoned or new, Spark streamlines your development for stunning astro websites.",
+    "integration.title": "Integrations",
+    "integration.description":
+      "Click on a card below to open the intergation documentation.",
+    "faq.title": "FAQ",
+    "faq.why": "Why did you create this template?",
+    "faq.who": "Why created this template?",
+    "faq.tech": "What did you use to create this template?",
+    "faq.reason_why":
+      "I created this template cause i wanted to learn about astro.",
+    "faq.reason_who": "This template was made solely by me, Ruben Winant",
+    "faq.reason_tech":
+      "I used Astro, Alpine.js, mdx, sitemap, tailwind, vercel and mailersend",
+    "faq.description": "This is the faq page",
+    "nav.components": "Components",
+    "nav.faq": "faq",
+    "footer.copyright":
+      "Spark Theme. All rights reserved. This project is independent of and not endorsed or sponsored by Astro or Tailwind Labs.",
+    "footer.createdBy": "Created by",
+    "footer.createdBy2":
+      "with Astro and Tailwind from the beautiful Bierbeek, Belgium.",
+    "faq.contact": "Couldn't find what your're looking for?",
+    "faq.contactUs": "Contact us!",
   },
   nl: {
     "layout.test": "hallo",
+    "hero.title": " het beste minimale Astro starter template!",
+    "hero.description":
+      "Start astro projecten eenvoudig en met stijl. Minimalistisch design, maximale functionaliteit. Of je nu ervaren bent of nieuw, Spark vereenvoudigt je ontwikkeling voor prachtige astro websites.",
+    "integration.title": "Integraties",
+    "integration.description":
+      "Klik op een kaart hieronder om de documentatie van de integratie te openen.",
+    "faq.title": "Veelgestelde vragen",
+    "faq.why": "Waarom heb je deze template gemaakt?",
+    "faq.who": "Wie heeft deze template gemaakt?",
+    "faq.tech": "Wat heb je gebruikt om deze template te maken?",
+    "faq.reason_why":
+      "Ik heb deze template gemaakt omdat ik meer wilde leren over Astro.",
+    "faq.reason_who":
+      "Deze template is volledig gemaakt door mij, Ruben Winant",
+    "faq.reason_tech":
+      "Ik heb Astro, Alpine.js, mdx, sitemap, tailwind, vercel en mailersend gebruikt",
+    "faq.description": "Dit is de FAQ-pagina",
+    "nav.components": "Componenten",
+    "nav.faq": "faq",
+    "footer.copyright":
+      "Spark Thema. Alle rechten voorbehouden. Dit project is onafhankelijk van en wordt niet onderschreven of gesponsord door Astro of Tailwind Labs.",
+    "footer.createdBy": "Gemaakt door",
+    "footer.createdBy2":
+      "met Astro en Tailwind vanuit het mooie Bierbeek, België.",
+    "faq.contact": "Kon je niet vinden wat je zoekt?",
+    "faq.contactUs": "Contacteer ons!",
   },
   fr: {
     "layout.test": "bonjour",
+    "hero.title": " le meilleur modèle de démarrage Astro minimal !",
+    "hero.description":
+      "Lancez vos projets astro avec facilité et style. Design minimaliste, fonctionnalité maximale. Que vous soyez expérimenté ou novice, Spark simplifie votre développement pour des sites web astro époustouflants.",
+    "integration.title": "Intégrations",
+    "integration.description":
+      "Cliquez sur une carte ci-dessous pour ouvrir la documentation de l'intégration",
+    "faq.title": "FAQ",
+    "faq.why": "Pourquoi avez-vous créé ce modèle?",
+    "faq.who": "Qui a créé ce modèle?",
+    "faq.tech": "Qu'avez-vous utilisé pour créer ce modèle?",
+    "faq.reason_why":
+      "J'ai créé ce modèle car je voulais apprendre à utiliser Astro.",
+    "faq.reason_who":
+      "Ce modèle a été entièrement réalisé par moi-même, Ruben Winant",
+    "faq.reason_tech":
+      "J'ai utilisé Astro, Alpine.js, mdx, sitemap, tailwind, vercel et mailersend",
+    "faq.description": "Ceci est la page des FAQ",
+    "nav.components": "Composants",
+    "nav.faq": "faq",
+    "footer.copyright":
+      "Spark Theme. Tous droits réservés. Ce projet est indépendant d'Astro ou de Tailwind Labs et n'est ni approuvé ni sponsorisé par eux.",
+    "footer.createdBy": "Créé par",
+    "footer.createdBy2":
+      "avec Astro et Tailwind depuis le magnifique Bierbeek, en Belgique",
+    "faq.contact": "Vous n'avez pas trouvé ce que vous cherchiez ?",
+    "faq.contactUs": "Contactez-nous !",
   },
 };

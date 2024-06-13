@@ -1,17 +1,13 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import LangSwitch from "../components/LangSwitch.astro";
+import Footer from "../components/Footer.astro";
 import Navigation from "../components/Navigation.astro";
-import { useTranslations, type UiType } from "../i18n/utils";
 
 const { title, lang, description } = Astro.props;
-const t = useTranslations(lang as UiType);
-
-const today = new Date();
 ---
 
 <!doctype html>
-<html lang={lang} class="bg-white">
+<html lang={lang}>
   <head>
     <BaseHead lang={lang} title={title} description={description} />
   </head>
@@ -21,24 +17,7 @@ const today = new Date();
   <body>
     <slot />
   </body>
-  <footer class="bg-gray py-4">
-    <div class="container">
-      <div class="w-full flex justify-between">
-        <span></span>
-        <LangSwitch />
-      </div>
-      <small class="text-white">
-        &copy; {today.getFullYear()} Spark Theme. All rights reserved. This project
-        is independent of and not endorsed or sponsored by Astro or Tailwind Labs.
-        Created by
-        <b
-          ><a href="https://www.rubenwinant.be" target="_blank" class="link"
-            >Ruben Winant</a
-          ></b
-        > with Astro and Tailwind from the beautiful Bierbeek, Belgium.
-      </small>
-    </div>
-  </footer>
+  <Footer />
 
   <style is:global>
     @tailwind base;
@@ -61,6 +40,10 @@ const today = new Date();
       @font-face {
         font-family: "OpenSans-Italic";
         src: url("/fonts/OpenSans-Italic.ttf") format("truetype");
+      }
+
+      [x-cloak] {
+        display: none !important;
       }
 
       html:not(h1, h2, h3, h4, h5, h6) {
@@ -92,19 +75,19 @@ const today = new Date();
       }
 
       small {
-        @apply font-raleway leading-tight text-xs mb-4;
+        @apply font-raleway leading-tight text-xs mb-2;
       }
 
       p {
-        @apply leading-relaxed mb-4;
+        @apply leading-relaxed mb-2;
       }
 
       blockquote {
-        @apply italic leading-relaxed text-lg lg:text-xl mb-4;
+        @apply italic leading-relaxed text-lg lg:text-xl;
       }
 
       caption {
-        @apply font-light leading-tight text-sm mb-4;
+        @apply font-light leading-tight text-sm;
       }
 
       section {
@@ -116,7 +99,7 @@ const today = new Date();
       }
 
       .fancy {
-        @apply bg-gradient-to-tr from-primary bg-secondary bg-clip-text text-transparent;
+        @apply bg-gradient-to-tr from-primary to-secondary bg-clip-text text-transparent;
       }
     }
   </style>

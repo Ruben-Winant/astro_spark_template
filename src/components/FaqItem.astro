@@ -1,0 +1,29 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const { question, answer } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div
+  x-data="{ expanded: false }"
+  class="inline-block border border-gray/20 rounded-md w-full mb-4 hover:bg-gradient-to-tr from-primary to-secondary bg-clip-text"
+  :class="expanded ? 'bg-gradient-to-tr from-primary to-secondary bg-clip-text' : ''"
+>
+  <button
+    class="hover:fancy font-semibold px-6 py-4 w-full flex justify-between gap-4"
+    :class="expanded ? 'fancy' : ''"
+    @click="expanded = ! expanded"
+  >
+    <spa class="text-left">{t(question)}</spa>
+    <i
+      class="transition-all h-fit my-auto"
+      :class="expanded ? 'rotate-[60deg]' : ''">▼</i
+    >
+  </button>
+
+  <div x-show="expanded" x-collapse x-cloak>
+    <p class="px-6 pb-4 m-0">{t(answer)}</p>
+  </div>
+</div>
