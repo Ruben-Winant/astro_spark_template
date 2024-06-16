@@ -21,13 +21,14 @@ export async function getStaticPaths() {
       <p>{t("faq.description")}</p>
     </section>
 
-    <section class="gap-8">
+    <section class="flex flex-col gap-2">
       <FaqItem question="faq.why" answer="faq.reason_why" />
       <FaqItem question="faq.who" answer="faq.reason_who" />
       <FaqItem question="faq.tech" answer="faq.reason_tech" />
       <a
+        data-astro-prefetch
         href={`/${lang}/contact`}
-        class="block border border-gray/20 rounded-md w-full font-semibold px-6 py-4 link"
+        class="listCard px-6 py-4 font-semibold"
         >{t("faq.contact")} <span class="fancy">{t("faq.contactUs")} </span></a
       >
     </section>

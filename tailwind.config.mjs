@@ -32,7 +32,7 @@ export default {
         gray: "#13151a",
         elevated: "#fbf7f5",
         negative: "#E62323",
-        positive: "#00D2BE",
+        positive: "#00d255",
         primary: "#DC3E40",
         secondary: "#EE46E0",
       },

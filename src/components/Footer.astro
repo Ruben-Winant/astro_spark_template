@@ -8,9 +8,24 @@ const t = useTranslations(lang as UiType);
 
 <footer class="bg-gray py-4">
   <div class="container">
-    <div class="w-full flex justify-between">
-      <span></span>
+    <div class="flex justify-between items-center">
+      <a
+        data-astro-prefetch
+        href={`/${lang}/`}
+        class="flex gap-1 font-semibold text-white"
+        ><img
+          src="/favicon.svg"
+          alt="spark logo"
+          width="20"
+          height="20"
+        />Spark</a
+      >
       <LangSwitch />
+    </div>
+    <div class="grid grid-cols-3">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
     <small class="text-white">
       &copy; {t("footer.copyright", new Date().getFullYear())}

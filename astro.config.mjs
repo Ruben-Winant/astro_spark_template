@@ -26,6 +26,7 @@ export default defineConfig({
     mdx(),
     alpinejs({ entrypoint: "/src/entrypoint" }),
   ],
+  prefetch: true,
   output: "server",
   adapter: vercel(),
 });

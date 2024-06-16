@@ -6,9 +6,9 @@ const t = useTranslations(lang);
 ---
 
 <nav class="container my-4 relative bg-white" x-data="{ expanded: false }">
-  <ul class="flex items-center justify-center gap-8 w-full z-10">
+  <ul class="flex items-center justify-center gap-4 w-full z-10">
     <li class="mr-auto">
-      <a href="/" class="flex gap-1 font-semibold"
+      <a data-astro-prefetch href={`/${lang}/`} class="flex gap-1 font-semibold"
         ><img
           src="/favicon.svg"
           alt="spark logo"
@@ -18,13 +18,27 @@ const t = useTranslations(lang);
       >
     </li>
     <li class="hidden md:block">
-      <a class="link" href={`/${lang}/components/`}>{t("nav.components")}</a>
+      <a data-astro-prefetch class="link" href={`/${lang}/components/`}
+        >{t("nav.components")}</a
+      >
     </li>
     <li class="hidden md:block">
-      <a class="link" href={`/${lang}/faq/`}>{t("nav.faq")}</a>
+      <a data-astro-prefetch class="link" href={`/${lang}/faq/`}
+        >{t("nav.faq")}</a
+      >
+    </li>
+    <li class="hidden md:block">
+      <a data-astro-prefetch class="link" href={`/${lang}/contact/`}
+        >{t("nav.contact")}</a
+      >
     </li>
     <li class="flex md:hidden">
-      <button type="button" class="w-8 my-auto" @click="expanded = !expanded">
+      <button
+        title="menu"
+        type="button"
+        class="w-8 my-auto"
+        @click="expanded = !expanded"
+      >
         <svg
           class="hb"
           xmlns="http://www.w3.org/2000/svg"
@@ -80,13 +94,23 @@ const t = useTranslations(lang);
   >
     <li class="flex w-full">
       <a
+        data-astro-prefetch
         class="link py-2 mx-auto w-full text-center"
         href={`/${lang}/components/`}>{t("nav.components")}</a
       >
     </li>
     <li class="flex w-full">
-      <a class="link py-2 mx-auto w-full text-center" href={`/${lang}/faq/`}
-        >{t("nav.faq")}</a
+      <a
+        data-astro-prefetch
+        class="link py-2 mx-auto w-full text-center"
+        href={`/${lang}/faq/`}>{t("nav.faq")}</a
+      >
+    </li>
+    <li class="flex w-full">
+      <a
+        data-astro-prefetch
+        class="link py-2 mx-auto w-full text-center"
+        href={`/${lang}/contact/`}>{t("nav.contact")}</a
       >
     </li>
   </ul>
