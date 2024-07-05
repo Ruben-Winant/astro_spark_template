@@ -5,10 +5,10 @@ const { title, description } = Astro.props;
 <section>
   {title ? <h2>{title}</h2> : ""}
   {description ? <p>{description}</p> : ""}
-  <div class="grid md:grid-cols-2 gap-4 mb-4">
+  <div class="grid md:grid-flow-col auto-cols-fr gap-4 mb-4">
     <slot name="upper-row" />
   </div>
-  <div class="grid md:grid-cols-3 gap-4">
+  <div class="grid md:grid-flow-col auto-cols-fr gap-4">
     <slot name="lower-row" />
   </div>
 </section>
