@@ -102,28 +102,35 @@ const { title, lang, description } = Astro.props;
         @apply bg-gradient-to-tr from-primary to-secondary bg-clip-text text-transparent;
       }
 
-      .border-gradient {
-        border-image-source: linear-gradient(to right top, #dc3e40, #ee46e0);
-        border-image-slice: 1;
-      }
-
       .group:hover .btn-primary,
       .group:focus-within .btn-primary {
         @apply bg-right-top bg-gradient-to-tr from-primary via-75% to-secondary bg-clip-border text-white;
       }
 
       .btn-primary {
-        @apply fancy border border-gradient w-fit px-3 py-2 transition-all hover:shadow-md;
+        @apply fancy border border-primary w-fit py-2 px-8 transition-all hover:shadow-md rounded-full;
+      }
+
+      .btn-flat-white {
+        @apply bg-white text-primary py-2 px-8 rounded-full w-fit;
       }
 
       .listCard {
-        @apply hover:border-gradient focus-visible:border-gradient focus:outline-none h-full bg-white border-2 border-gray/10 rounded;
+        @apply hover:border-primary focus-visible:border-primary focus:outline-none h-full bg-white border-2 border-gray/10 rounded;
       }
 
       select,
       input,
       textarea {
-        @apply hover:border-gradient focus-visible:border-gradient focus:outline-none py-2 px-3 h-full bg-white border-2 border-gray/10 rounded;
+        @apply hover:border-primary focus-visible:border-primary focus:outline-none py-2 px-3 h-full bg-white border border-gray/10 rounded;
+      }
+
+      .slider:hover {
+        animation-play-state: paused;
+      }
+
+      .card {
+        @apply hover:bg-gradient-to-tr from-primary/5 to-secondary/5 rounded-md overflow-hidden relative p-4 border border-elevated hover:border-secondary/10 transition-all shadow hover:shadow-md w-full flex flex-col justify-start shrink-0;
       }
     }
   </style>

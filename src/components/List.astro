@@ -1,0 +1,18 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const { title: title, description: description } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section>
+  {title ? <h2>{title}</h2> : ""}
+  {description ? <p>{description}</p> : ""}
+  <ul
+    class="mb-4 grid grid-cols-3 md:grid-cols-4 lg:flex flex-wrap gap-4 py-4 w-full"
+  >
+    <slot />
+  </ul>
+</section>

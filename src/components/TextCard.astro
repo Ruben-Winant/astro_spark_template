@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+
+const { title, description, classes, icon } = Astro.props;
+---
+
+<li
+  class={classes +
+    " rounded-2xl overflow-hidden relative p-8 border border-elevated transition-all shadow hover:shadow-lg w-full md:w-1/2 flex flex-col justify-start snap-start snap-always shrink-0"}
+>
+  {
+    icon ? (
+      <i class="absolute -top-6 -left-8 w-36 aspect-square flex -z-10">
+        <Image
+          src={icon}
+          width={150}
+          height={150}
+          alt=""
+          loading="eager"
+          class="blur-sm opacity-25 contrast-0"
+        />
+      </i>
+    ) : (
+      ""
+    )
+  }
+  <h4>{title}</h4>
+  <p>{description}</p>
+</li>

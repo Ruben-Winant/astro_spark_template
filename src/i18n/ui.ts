@@ -44,6 +44,23 @@ export const ui = {
     "contact.error_topic": "Please select a valid topic.",
     "contact.success": "Email was sent successfully",
     "contact.error_general": "Something went wrong, try again later",
+    "slider.title": "Everything you need to get started",
+    "slider.card_1_title": "Zero JavaScript, By Default",
+    "slider.card_1_description":
+      "Astro only ships the JavaScript you need and automatically strips away the rest for a faster website.",
+    "slider.card_2_title": "Interactive when needed",
+    "slider.card_2_description":
+      "Alpine is a rugged, minimal tool for composing behavior directly in your markup. Think of it like jQuery for the modern web.",
+    "slider.card_3_title": "Multi-language Support",
+    "slider.card_3_description":
+      "Multi-language support straight out of the box using Astro's built-in i18n capabilities, making your content accessible to a wider audience.",
+    "slider.card_4_title": "Style with Tailwind CSS",
+    "slider.card_4_description":
+      "Style your website directly in your HTML with utility-first CSS classes, making design a breeze.",
+    "slider.card_5_title": "SEO optimized",
+    "slider.card_5_description":
+      "Astro's sitemap integration helps search engines discover your content, improving your site's SEO effortlessly.",
+    "features.title": "Features",
   },
   nl: {
     "layout.test": "hallo",
@@ -91,6 +108,23 @@ export const ui = {
     "contact.error_topic": "Selecteer een geldig onderwerp.",
     "contact.success": "E-mail is succesvol verzonden",
     "contact.error_general": "Er ging iets mis, probeer het later nog eens",
+    "features.title": "Kenmerken",
+    "slider.title": "Alles wat je nodig hebt om aan de slag te gaan",
+    "slider.card_1_title": "Nul JavaScript, standaard",
+    "slider.card_1_description":
+      "Astro levert alleen de JavaScript die je nodig hebt en stript de rest automatisch weg voor een snellere website.",
+    "slider.card_2_title": "Interactief wanneer nodig",
+    "slider.card_2_description":
+      "Alpine is een robuuste, minimale tool voor het samenstellen van gedrag direct in je markup. Zie het als jQuery voor het moderne web.",
+    "slider.card_3_title": "Ondersteuning voor meerdere talen.",
+    "slider.card_3_description":
+      "Ondersteuning voor meerdere talen direct uit de doos met behulp van Astro's ingebouwde i18n-mogelijkheden, waardoor uw inhoud toegankelijk wordt voor een breder publiek.",
+    "slider.card_4_title": "Stijl met Tailwind CSS",
+    "slider.card_4_description":
+      "Style uw website direct in uw HTML met utility-first CSS-klassen, waardoor ontwerpen een koud kunstje wordt.",
+    "slider.card_5_title": "SEO geoptimaliseerd",
+    "slider.card_5_description":
+      "Astro's sitemap-integratie helpt zoekmachines uw inhoud te ontdekken, waardoor de SEO van uw site moeiteloos wordt verbeterd.",
   },
   fr: {
     "layout.test": "bonjour",
@@ -139,5 +173,22 @@ export const ui = {
     "contact.success": "L'e-mail a été envoyé avec succès",
     "contact.error_general":
       "Quelque chose s'est mal passé, réessayez plus tard",
+    "features.title": "Features",
+    "slider.title": "Tout ce dont vous avez besoin pour commencer",
+    "slider.card_1_title": "Zéro JavaScript, par défaut",
+    "slider.card_1_description":
+      "Astro ne fournit que le JavaScript dont vous avez besoin et supprime automatiquement le reste pour un site web plus rapide.",
+    "slider.card_2_title": "Interactive when needed",
+    "slider.card_2_description":
+      "Alpine est un outil robuste et minimal pour composer des comportements directement dans votre balisage. Voyez-le comme jQuery pour le web moderne.",
+    "slider.card_3_title": "Multi-language Support",
+    "slider.card_3_description":
+      "Prise en charge multilingue dès la sortie de la boîte grâce aux capacités i18n intégrées d'Astro, ce qui rend votre contenu accessible à un public plus large.",
+    "slider.card_4_title": "Style with Tailwind CSS",
+    "slider.card_4_description":
+      "Stylez votre site web directement dans votre HTML avec des classes CSS utilitaires, ce qui facilite la conception.",
+    "slider.card_5_title": "SEO optimized",
+    "slider.card_5_description":
+      "L'intégration du sitemap d'Astro aide les moteurs de recherche à découvrir votre contenu, améliorant ainsi sans effort le référencement de votre site.",
   },
 };

@@ -1,7 +1,12 @@
 ---
 import IconCard from "../../components/IconCard.astro";
+import List from "../../components/List.astro";
 import { getLangFromUrl, useTranslations, LOCALES } from "../../i18n/utils";
 import Layout from "../../layouts/Layout.astro";
+import TextCard from "../../components/TextCard.astro";
+import AutoSlider from "../../components/AutoSlider.astro";
+import FullWidthBanner from "../../components/FullWidthBanner.astro";
+import CardGrid from "../../components/CardGrid.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -28,47 +33,125 @@ export async function getStaticPaths() {
       </div>
     </section>
 
-    <section>
-      <h2 class="text-h2">{t("integration.title")}</h2>
-      <p>{t("integration.description")}</p>
-      <ul class="mb-4 flex gap-4 py-4 overflow-x-scroll w-full">
-        <IconCard
-          href="https://docs.astro.build/en/guides/integrations-guide/alpinejs/"
-          title="Alpine.js"
-          imgHref="/icons/alpinejs.svg"
-          imgAlt="alpine.js integration guide"
-        />
-        <IconCard
-          href="https://docs.astro.build/en/guides/integrations-guide/mdx/"
-          title="MDX"
-          imgHref="/icons/mdx.svg"
-          imgAlt="MDX integration guide"
-        />
-        <IconCard
-          href="https://docs.astro.build/en/guides/integrations-guide/sitemap/"
-          title="Sitemap"
-          imgHref="/icons/sitemap.svg"
-          imgAlt="sitemap integration guide"
-        />
-        <IconCard
-          href="https://docs.astro.build/en/guides/integrations-guide/tailwind/"
-          title="Tailwind"
-          imgHref="/icons/tailwind.svg"
-          imgAlt="tailwind integration guide"
-        />
-        <IconCard
-          href="https://docs.astro.build/en/guides/integrations-guide/vercel/"
-          title="Vercel"
-          imgHref="/icons/vercel.svg"
-          imgAlt="vercel integration guide"
-        />
-        <IconCard
-          href="https://github.com/mailersend/mailersend-nodejs?tab=readme-ov-file#send-a-template-based-email"
-          title="MailerSend"
-          imgHref="/icons/mailerSend.svg"
-          imgAlt="mailerSend documentation"
-        />
-      </ul>
-    </section>
+    <CardGrid title="What's included?">
+      <div slot="upper-row" class="card">
+        <h4>Contact page</h4>
+        <p>
+          Capture leads and stay connected with a user-friendly contact form.
+        </p>
+      </div>
+      <div slot="upper-row" class="card">
+        <h4>Ready-to-go blog</h4>
+        <p>
+          Grow your audience and establish authority with a complete,
+          ready-to-use blog.
+        </p>
+      </div>
+      <div slot="lower-row" class="card text-center grid place-content-center">
+        <span class="text-6xl">6</span>
+        <p class="m-0">Ready to use components</p>
+      </div>
+      <div slot="lower-row" class="card">
+        <h4>FAQ page</h4>
+        <p>People might have questions, now you can answer them!</p>
+      </div>
+      <div slot="lower-row" class="card">
+        <h4>Speak Their Language</h4>
+        <p>I18N built. Convert more!</p>
+      </div>
+    </CardGrid>
+
+    <List
+      title={t("integration.title")}
+      description={t("integration.description")}
+    >
+      <IconCard
+        href="https://docs.astro.build/en/guides/integrations-guide/alpinejs/"
+        title="Alpine.js"
+        imgHref="/icons/alpinejs.svg"
+        imgAlt="alpine.js integration guide"
+      />
+      <IconCard
+        href="https://docs.astro.build/en/guides/integrations-guide/mdx/"
+        title="MDX"
+        imgHref="/icons/mdx.svg"
+        imgAlt="MDX integration guide"
+      />
+      <IconCard
+        href="https://docs.astro.build/en/guides/integrations-guide/sitemap/"
+        title="Sitemap"
+        imgHref="/icons/sitemap.svg"
+        imgAlt="sitemap integration guide"
+      />
+      <IconCard
+        href="https://docs.astro.build/en/guides/integrations-guide/tailwind/"
+        title="Tailwind"
+        imgHref="/icons/tailwind.svg"
+        imgAlt="tailwind integration guide"
+      />
+      <IconCard
+        href="https://docs.astro.build/en/guides/integrations-guide/vercel/"
+        title="Vercel"
+        imgHref="/icons/vercel.svg"
+        imgAlt="vercel integration guide"
+      />
+      <IconCard
+        href="https://github.com/mailersend/mailersend-nodejs?tab=readme-ov-file#send-a-template-based-email"
+        title="MailerSend"
+        imgHref="/icons/mailerSend.svg"
+        imgAlt="mailerSend documentation"
+      />
+    </List>
+
+    <AutoSlider title={t("slider.title")}>
+      <TextCard
+        icon="/icons/zero.svg"
+        title={t("slider.card_1_title")}
+        description={t("slider.card_1_description")}
+      />
+      <TextCard
+        icon="/icons/pointer.svg"
+        title={t("slider.card_2_title")}
+        description={t("slider.card_2_description")}
+      />
+      <TextCard
+        icon="/icons/globe.svg"
+        title={t("slider.card_3_title")}
+        description={t("slider.card_3_description")}
+      />
+      <TextCard
+        icon="/icons/tailwind.svg"
+        title={t("slider.card_4_title")}
+        description={t("slider.card_4_description")}
+      />
+      <TextCard
+        icon="/icons/search.svg"
+        title={t("slider.card_5_title")}
+        description={t("slider.card_5_description")}
+      />
+      <!-- some duplicates needed to make sure row is full -->
+      <TextCard
+        icon="/icons/zero.svg"
+        title={t("slider.card_1_title")}
+        description={t("slider.card_1_description")}
+      />
+      <TextCard
+        icon="/icons/pointer.svg"
+        title={t("slider.card_2_title")}
+        description={t("slider.card_2_description")}
+      />
+      <TextCard
+        icon="/icons/globe.svg"
+        title={t("slider.card_3_title")}
+        description={t("slider.card_3_description")}
+      />
+    </AutoSlider>
+
+    <FullWidthBanner
+      title="Websites made easy"
+      description="Get your project up and running in no time with Spark"
+      ctaTitle="get started"
+      ctaLink="/test"
+    />
   </main>
 </Layout>

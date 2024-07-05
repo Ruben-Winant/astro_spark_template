@@ -36,6 +36,25 @@ export default {
         primary: "#DC3E40",
         secondary: "#EE46E0",
       },
+      keyframes: {
+        slider: {
+          from: { transform: "translate(0)" },
+          to: { transform: "translate(calc(-320px * 5 - 12rem))" },
+        },
+        "slider-md": {
+          from: { transform: "translate(0)" },
+          to: { transform: "translate(calc(-432px * 5 - 12rem))" },
+        },
+        "slider-lg": {
+          from: { transform: "translate(0)" },
+          to: { transform: "translate(calc(-544px * 5 - 12rem))" },
+        },
+      },
+      animation: {
+        slider: "slider 20s linear infinite",
+        "slider-md": "slider-md 20s linear infinite",
+        "slider-lg": "slider-lg 20s linear infinite",
+      },
     },
   },
   plugins: [],
