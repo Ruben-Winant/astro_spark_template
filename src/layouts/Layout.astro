@@ -125,6 +125,28 @@ const { title, lang, description } = Astro.props;
         @apply hover:border-primary focus-visible:border-primary focus:outline-none py-2 px-3 h-full bg-white border border-gray/10 rounded;
       }
 
+      .slider-container:before {
+          content: "";
+          position: absolute;
+          height: 80%;
+          bottom: 0;
+          left: 0;
+          width: 80px;
+          background: linear-gradient(to right, #FFFFFF, transparent);
+          z-index: 10;
+      }
+
+        .slider-container:after {
+            content: "";
+            position: absolute;
+            height: 80%;
+            bottom: 0;
+            right: 0;
+            width: 80px;
+            background: linear-gradient(to left, #FFFFFF, transparent);
+            z-index: 10;
+        }
+
       .slider:hover {
         animation-play-state: paused;
       }
