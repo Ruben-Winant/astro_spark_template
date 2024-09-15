@@ -50,28 +50,36 @@ const { title, lang, description } = Astro.props;
         font-family: "OpenSans", system-ui, sans-serif;
       }
 
+      header, footer, main, section, article {
+        container-type: inline-size
+      }
+
+      h1,h2,h3,h4,h5,h6 {
+        @apply font-raleway leading-tight mb-4 text-balance;
+      }
+
       h1 {
-        @apply font-raleway font-bold leading-tight text-4xl lg:text-5xl lg:leading-tight mb-4;
+        @apply font-bold text-4xl lg:text-5xl;
       }
 
       h2 {
-        @apply font-raleway font-bold leading-tight text-3xl lg:text-4xl lg:leading-tight mb-4;
+        @apply font-bold text-3xl lg:text-4xl;
       }
 
       h3 {
-        @apply font-raleway font-semibold leading-tight text-2xl lg:text-3xl lg:leading-tight mb-4;
+        @apply font-semibold text-2xl lg:text-3xl;
       }
 
       h4 {
-        @apply font-raleway font-semibold leading-tight text-xl lg:text-2xl lg:leading-tight mb-4;
+        @apply font-semibold text-xl lg:text-2xl;
       }
 
       h5 {
-        @apply font-raleway font-medium leading-tight text-lg lg:text-xl lg:leading-tight mb-4;
+        @apply font-medium text-lg lg:text-xl;
       }
 
       h6 {
-        @apply font-raleway font-medium leading-tight text-base lg:text-lg lg:leading-tight mb-4;
+        @apply font-medium text-base lg:text-lg;
       }
 
       small {
@@ -80,6 +88,11 @@ const { title, lang, description } = Astro.props;
 
       p {
         @apply leading-relaxed mb-2;
+      }
+
+      p, li, figcaption {
+        max-width: 65ch;
+        text-wrap: pretty;
       }
 
       blockquote {
@@ -108,7 +121,7 @@ const { title, lang, description } = Astro.props;
       }
 
       .btn-primary {
-        @apply fancy border border-primary w-fit py-2 px-8 transition-all hover:shadow-md rounded-full;
+        @apply fancy border border-primary hover:border-transparent w-fit py-2 px-8 transition-all hover:shadow-md rounded-full;
       }
 
       .btn-flat-white {
