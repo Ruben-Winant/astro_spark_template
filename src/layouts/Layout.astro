@@ -50,8 +50,12 @@ const { title, lang, description } = Astro.props;
         font-family: "OpenSans", system-ui, sans-serif;
       }
 
+      header {
+        display: inline;
+      }
+
       header, footer, main, section, article {
-        container-type: inline-size
+        container-type: inline-size;
       }
 
       h1,h2,h3,h4,h5,h6 {
@@ -165,7 +169,7 @@ const { title, lang, description } = Astro.props;
       }
 
       .card {
-        @apply hover:bg-gradient-to-tr from-primary/5 to-secondary/5 rounded-md overflow-hidden relative p-4 border border-elevated hover:border-secondary/10 transition-all shadow hover:shadow-md w-full flex flex-col justify-start shrink-0;
+        @apply bg-[length:210%_210%] bg-left-bottom hover:bg-right-top focus-within:bg-right-top bg-gradient-to-tr from-elevated from-50% via-primary/15 via-75% to-secondary/15 rounded-md overflow-hidden relative p-4 border border-elevated hover:border-secondary/10 transition-all shadow hover:shadow-md w-full flex flex-col justify-start;
       }
     }
   </style>
