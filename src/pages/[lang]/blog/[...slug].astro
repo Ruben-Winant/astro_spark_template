@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content";
+import { LOCALES, getLangFromUrl, useTranslations } from "../../../i18n/utils";
+import Layout from "../../../layouts/Layout.astro";
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog");
+
+  const paths = [];
+
+  for (const entry of blogEntries) {
+    for (const lang of Object.keys(LOCALES)) {
+      paths.push({
+        params: {
+          lang,
+          slug: entry.slug,
+        },
+        props: { entry, lang },
+      });
+    }
+  }
+
+  return paths;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={`Blog - ${entry.data.title}`} lang={lang}>
+  <main class="container mx-auto">
+    <Content />
+  </main>
+</Layout>
