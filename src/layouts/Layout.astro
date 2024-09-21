@@ -29,21 +29,25 @@ const { title, lang, description } = Astro.props;
         font-family: "Raleway";
         src: url("/fonts/Raleway.ttf") format("truetype");
         crossorigin: anonymous;
+        font-display: swap;
       }
       @font-face {
         font-family: "Raleway-Italic";
         src: url("/fonts/Raleway-Italic.ttf") format("truetype");
         crossorigin: anonymous;
+        font-display: swap;
       }
       @font-face {
         font-family: "OpenSans";
         src: url("/fonts/OpenSans.ttf") format("truetype");
         crossorigin: anonymous;
+        font-display: swap;
       }
       @font-face {
         font-family: "OpenSans-Italic";
         src: url("/fonts/OpenSans-Italic.ttf") format("truetype");
-        crossorigin: anonymous;
+        :anonymous;
+        font-display: swap;
       }
 
       [x-cloak] {
