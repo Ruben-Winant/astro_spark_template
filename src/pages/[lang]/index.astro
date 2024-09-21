@@ -35,34 +35,44 @@ export async function getStaticPaths() {
     <CardGrid title="test.cardGridTitle">
       <a slot="upper-row" href="#" class="card">
         <div class="flex items-baseline justify-between">
-          <h4>{t("test.cardGridTitle1")}</h4>
+          <span class="font-semibold text-xl lg:text-2xl"
+            >{t("test.cardGridTitle1")}</span
+          >
           <i><img src="../../../public/icons/link.svg" alt="" class="w-5" /></i>
         </div>
         <p>{t("test.cardGridDescription1")}</p>
       </a>
       <a slot="upper-row" href={`/${lang}/blog/`} class="card">
         <div class="flex items-baseline justify-between">
-          <h4>{t("test.cardGridTitle2")}</h4>
+          <span class="font-semibold text-xl lg:text-2xl"
+            >{t("test.cardGridTitle2")}</span
+          >
           <i><img src="../../../public/icons/link.svg" alt="" class="w-5" /></i>
         </div>
         <p>{t("test.cardGridDescription2")}</p>
       </a>
       <a slot="lower-row" href={`/${lang}/components`} class="card">
         <div class="flex items-baseline justify-between">
-          <h4>{t("test.cardGridTitle3")}</h4>
+          <span class="font-semibold text-xl lg:text-2xl"
+            >{t("test.cardGridTitle3")}</span
+          >
           <i><img src="../../../public/icons/link.svg" alt="" class="w-5" /></i>
         </div>
         <p class="m-0 mt-1">{t("test.cardGridDescription3")}</p>
       </a>
       <a slot="lower-row" href={`/${lang}/faq`} class="card">
         <div class="flex items-baseline justify-between">
-          <h4>{t("test.cardGridTitle4")}</h4>
+          <span class="font-semibold text-xl lg:text-2xl"
+            >{t("test.cardGridTitle4")}</span
+          >
           <i><img src="../../../public/icons/link.svg" alt="" class="w-5" /></i>
         </div>
         <p>{t("test.cardGridDescription4")}</p>
       </a>
       <div slot="lower-row" class="card">
-        <h4>{t("test.cardGridTitle5")}</h4>
+        <span class="font-semibold text-xl lg:text-2xl"
+          >{t("test.cardGridTitle5")}</span
+        >
         <p>{t("test.cardGridDescription5")}</p>
       </div>
     </CardGrid>

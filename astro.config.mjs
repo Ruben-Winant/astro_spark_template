@@ -6,8 +6,6 @@ import alpinejs from "@astrojs/alpinejs";
 import { DEFAULT_LOCALE, LOCALES } from "./src/i18n/utils";
 import vercel from "@astrojs/vercel/serverless";
 
-import collapsePlugin from "@alpinejs/collapse";
-
 // https://astro.build/config
 export default defineConfig({
   site: "http://localhost:4321/",
