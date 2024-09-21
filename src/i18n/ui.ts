@@ -1,6 +1,6 @@
 export const ui = {
   en: {
-    "layout.test": "hello",
+    "layout.test": "Spark",
     "hero.title": " the best minimal astro starter template!",
     "hero.description":
       "Launch astro projects with ease and style. Minimalist design, maximum functionality. Whether seasoned or new, Spark streamlines your development for stunning astro websites.",
