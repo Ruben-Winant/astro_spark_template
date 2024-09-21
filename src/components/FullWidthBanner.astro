@@ -1,5 +1,8 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
 const { title, description, ctaTitle, ctaLink } = Astro.props;
+const t = useTranslations(getLangFromUrl(Astro.url));
 ---
 
 <div class="relative flex justify-center">
@@ -8,8 +11,14 @@ const { title, description, ctaTitle, ctaLink } = Astro.props;
   >
   </div>
   <div class="text-white z-10 py-12 px-4 text-center">
-    <h2>{title}</h2>
-    <p class="mb-6">{description}</p>
-    <a class="btn-flat-white" href={ctaLink}>{ctaTitle}</a>
+    <h2>{t(title)}</h2>
+    <p>{t(description)}</p>
+    {
+      ctaLink && ctaTitle && (
+        <a class="btn-flat-white mt-6 inline-block" href={ctaLink}>
+          {t(ctaTitle)}
+        </a>
+      )
+    }
   </div>
 </div>

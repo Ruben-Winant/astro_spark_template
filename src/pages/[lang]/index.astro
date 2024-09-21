@@ -1,6 +1,5 @@
 ---
 import IconCard from "../../components/IconCard.astro";
-import List from "../../components/List.astro";
 import { getLangFromUrl, useTranslations, LOCALES } from "../../i18n/utils";
 import Layout from "../../layouts/Layout.astro";
 import TextCard from "../../components/TextCard.astro";
@@ -33,75 +32,85 @@ export async function getStaticPaths() {
       </div>
     </section>
 
-    <CardGrid title="What's included?">
-      <div slot="upper-row" class="card">
-        <h4>Contact page</h4>
-        <p>
-          Capture leads and stay connected with a user-friendly contact form,
-          powered by mailersend.
-        </p>
-      </div>
+    <CardGrid title="test.cardGridTitle">
+      <a slot="upper-row" href="#" class="card">
+        <div class="flex items-baseline justify-between">
+          <h4>{t("test.cardGridTitle1")}</h4>
+          <i><img src="../../../public/icons/link.svg" class="w-5" /></i>
+        </div>
+        <p>{t("test.cardGridDescription1")}</p>
+      </a>
       <a slot="upper-row" href={`/${lang}/blog`} class="card">
-        <h4>Ready-to-go blog</h4>
-        <p>Start blogging using the I18N compatible, MDX powered blog!</p>
+        <div class="flex items-baseline justify-between">
+          <h4>{t("test.cardGridTitle2")}</h4>
+          <i><img src="../../../public/icons/link.svg" class="w-5" /></i>
+        </div>
+        <p>{t("test.cardGridDescription2")}</p>
+      </a>
+      <a slot="lower-row" href={`/${lang}/components`} class="card">
+        <div class="flex items-baseline justify-between">
+          <h4>{t("test.cardGridTitle3")}</h4>
+          <i><img src="../../../public/icons/link.svg" class="w-5" /></i>
+        </div>
+        <p class="m-0 mt-1">{t("test.cardGridDescription3")}</p>
+      </a>
+      <a slot="lower-row" href={`/${lang}/faq`} class="card">
+        <div class="flex items-baseline justify-between">
+          <h4>{t("test.cardGridTitle4")}</h4>
+          <i><img src="../../../public/icons/link.svg" class="w-5" /></i>
+        </div>
+        <p>{t("test.cardGridDescription4")}</p>
       </a>
       <div slot="lower-row" class="card">
-        <h4>Ready to go</h4>
-        <p class="m-0 mt-1">
-          Get up and running quickly using our premade pages and components.
-        </p>
-      </div>
-      <div slot="lower-row" class="card">
-        <h4>FAQ page</h4>
-        <p>People might have questions, now you can answer them!</p>
-      </div>
-      <div slot="lower-row" class="card">
-        <h4>Speak Their Language</h4>
-        <p>I18N built in. Convert more!</p>
+        <h4>{t("test.cardGridTitle5")}</h4>
+        <p>{t("test.cardGridDescription5")}</p>
       </div>
     </CardGrid>
 
-    <List
-      title={t("integration.title")}
-      description={t("integration.description")}
-    >
-      <IconCard
-        href="https://docs.astro.build/en/guides/integrations-guide/alpinejs/"
-        title="Alpine.js"
-        imgHref="/icons/alpinejs.svg"
-        imgAlt="alpine.js integration guide"
-      />
-      <IconCard
-        href="https://docs.astro.build/en/guides/integrations-guide/mdx/"
-        title="MDX"
-        imgHref="/icons/mdx.svg"
-        imgAlt="MDX integration guide"
-      />
-      <IconCard
-        href="https://docs.astro.build/en/guides/integrations-guide/sitemap/"
-        title="Sitemap"
-        imgHref="/icons/sitemap.svg"
-        imgAlt="sitemap integration guide"
-      />
-      <IconCard
-        href="https://docs.astro.build/en/guides/integrations-guide/tailwind/"
-        title="Tailwind"
-        imgHref="/icons/tailwind.svg"
-        imgAlt="tailwind integration guide"
-      />
-      <IconCard
-        href="https://docs.astro.build/en/guides/integrations-guide/vercel/"
-        title="Vercel"
-        imgHref="/icons/vercel.svg"
-        imgAlt="vercel integration guide"
-      />
-      <IconCard
-        href="https://github.com/mailersend/mailersend-nodejs?tab=readme-ov-file#send-a-template-based-email"
-        title="MailerSend"
-        imgHref="/icons/mailerSend.svg"
-        imgAlt="mailerSend documentation"
-      />
-    </List>
+    <section>
+      <h2>{t("integration.title")}</h2>
+      <p>{t("integration.description")}</p>
+      <ul
+        class="mb-4 grid grid-cols-3 md:grid-cols-4 lg:flex flex-wrap gap-4 py-4 w-full"
+      >
+        <IconCard
+          href="https://docs.astro.build/en/guides/integrations-guide/alpinejs/"
+          title="Alpine.js"
+          imgHref="/icons/alpinejs.svg"
+          imgAlt="alpine.js integration guide"
+        />
+        <IconCard
+          href="https://docs.astro.build/en/guides/integrations-guide/mdx/"
+          title="MDX"
+          imgHref="/icons/mdx.svg"
+          imgAlt="MDX integration guide"
+        />
+        <IconCard
+          href="https://docs.astro.build/en/guides/integrations-guide/sitemap/"
+          title="Sitemap"
+          imgHref="/icons/sitemap.svg"
+          imgAlt="sitemap integration guide"
+        />
+        <IconCard
+          href="https://docs.astro.build/en/guides/integrations-guide/tailwind/"
+          title="Tailwind"
+          imgHref="/icons/tailwind.svg"
+          imgAlt="tailwind integration guide"
+        />
+        <IconCard
+          href="https://docs.astro.build/en/guides/integrations-guide/vercel/"
+          title="Vercel"
+          imgHref="/icons/vercel.svg"
+          imgAlt="vercel integration guide"
+        />
+        <IconCard
+          href="https://github.com/mailersend/mailersend-nodejs?tab=readme-ov-file#send-a-template-based-email"
+          title="MailerSend"
+          imgHref="/icons/mailerSend.svg"
+          imgAlt="mailerSend documentation"
+        />
+      </ul>
+    </section>
 
     <AutoSlider title={t("slider.title")}>
       <TextCard
@@ -148,10 +157,10 @@ export async function getStaticPaths() {
     </AutoSlider>
 
     <FullWidthBanner
-      title="Websites made easy"
-      description="Get your project up and running in no time with Spark"
-      ctaTitle="get started"
-      ctaLink="/test"
+      title="test.fullWidthBannerTitle"
+      description="test.fullWidthBannerDescription"
+      ctaTitle="test.button"
+      ctaLink="#"
     />
   </main>
 </Layout>

@@ -1,0 +1,227 @@
+---
+import AutoSlider from "../../components/AutoSlider.astro";
+import CardGrid from "../../components/CardGrid.astro";
+import DropdownItem from "../../components/DropdownItem.astro";
+import FullWidthBanner from "../../components/FullWidthBanner.astro";
+import IconCard from "../../components/IconCard.astro";
+import TextCard from "../../components/TextCard.astro";
+import { getLangFromUrl, useTranslations, LOCALES } from "../../i18n/utils";
+import Layout from "../../layouts/Layout.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+export const prerender = true;
+export async function getStaticPaths() {
+  return Object.keys(LOCALES).map((lang) => {
+    return { params: { lang } };
+  });
+}
+---
+
+<Layout title={t("nav.components")} lang={lang}>
+  <main class="container mx-auto">
+    <section>
+      <h1>{t("nav.components")}</h1>
+      <p>{t("components.description")}</p>
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <h2>{t("test.iconTitle")}</h2>
+      <p>{t("test.iconDescription")}</p>
+      <div class="flex flex-wrap gap-2">
+        <i title="Alpine.js"
+          ><img
+            src="../../../public/icons/alpinejs.svg"
+            class="w-6 aspect-square"
+          /></i
+        >
+        <i title="globe"
+          ><img
+            src="../../../public/icons/globe.svg"
+            class="w-6 aspect-square"
+          /></i
+        >
+        <i title="link"
+          ><img
+            src="../../../public/icons/link.svg"
+            class="w-6 aspect-square"
+          /></i
+        >
+        <i title="mailerSend"
+          ><img
+            src="../../../public/icons/mailersend.svg"
+            class="w-6 aspect-square"
+          /></i
+        >
+        <i title="mdx"
+          ><img
+            src="../../../public/icons/mdx.svg"
+            class="w-6 aspect-square"
+          /></i
+        >
+        <i title="pointer"
+          ><img
+            src="../../../public/icons/pointer.svg"
+            class="w-6 aspect-square"
+          /></i
+        >
+        <i title="search"
+          ><img
+            src="../../../public/icons/search.svg"
+            class="w-6 aspect-square"
+          /></i
+        >
+        <i title="sitemap"
+          ><img
+            src="../../../public/icons/sitemap.svg"
+            class="w-6 aspect-square"
+          /></i
+        >
+        <i title="tailwind"
+          ><img
+            src="../../../public/icons/tailwind.svg"
+            class="w-6 aspect-square"
+          /></i
+        >
+        <i title="vercel"
+          ><img
+            src="../../../public/icons/vercel.svg"
+            class="w-6 aspect-square"
+          /></i
+        >
+        <i title="zero"
+          ><img
+            src="../../../public/icons/zero.svg"
+            class="w-6 aspect-square"
+          /></i
+        >
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <h2>{t("test.dropdownCardTitle")}</h2>
+      <p>{t("test.dropdownCardDescription")}</p>
+      <DropdownItem title="test.title" content="test.description" />
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <h2>{t("test.cardsTitle")}</h2>
+      <p>{t("test.cardsDescription")}</p>
+
+      <div>
+        <h3>IconCard</h3>
+        <p>{t("test.iconCardDescription")}</p>
+        <IconCard
+          href="https://docs.astro.build/en/guides/integrations-guide/alpinejs/"
+          title="Alpine.js"
+          imgHref="/icons/alpinejs.svg"
+          imgAlt="alpine.js integration guide"
+        />
+      </div>
+
+      <div>
+        <h3>.card class</h3>
+        <p>{t("test.cardClass")}</p>
+        <a href="#" class="card">
+          <div class="flex items-baseline justify-between">
+            <h4>{t("test.cardGridTitle1")}</h4>
+            <i><img src="../../../public/icons/link.svg" class="w-5" /></i>
+          </div>
+          <p>{t("test.cardGridDescription1")}</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <AutoSlider
+        title={t("test.autoSliderTitle")}
+        description={t("test.autoSliderDescription")}
+      >
+        <TextCard
+          icon="/icons/zero.svg"
+          title={t("slider.card_1_title")}
+          description={t("slider.card_1_description")}
+        />
+        <TextCard
+          icon="/icons/pointer.svg"
+          title={t("slider.card_2_title")}
+          description={t("slider.card_2_description")}
+        />
+        <TextCard
+          icon="/icons/globe.svg"
+          title={t("slider.card_3_title")}
+          description={t("slider.card_3_description")}
+        />
+        <TextCard
+          icon="/icons/tailwind.svg"
+          title={t("slider.card_4_title")}
+          description={t("slider.card_4_description")}
+        />
+        <TextCard
+          icon="/icons/search.svg"
+          title={t("slider.card_5_title")}
+          description={t("slider.card_5_description")}
+        />
+        <!-- some duplicates needed to make sure row is full -->
+        <TextCard
+          icon="/icons/zero.svg"
+          title={t("slider.card_1_title")}
+          description={t("slider.card_1_description")}
+        />
+        <TextCard
+          icon="/icons/pointer.svg"
+          title={t("slider.card_2_title")}
+          description={t("slider.card_2_description")}
+        />
+        <TextCard
+          icon="/icons/globe.svg"
+          title={t("slider.card_3_title")}
+          description={t("slider.card_3_description")}
+        />
+      </AutoSlider>
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <h2>{t("test.containersTitle")}</h2>
+      <p>{t("test.cardGridDescription")}</p>
+      <CardGrid>
+        <a slot="upper-row" href="#" class="card">
+          <div class="flex items-baseline justify-between">
+            <h4>{t("test.cardGridTitle1")}</h4>
+            <i><img src="../../../public/icons/link.svg" class="w-5" /></i>
+          </div>
+          <p>{t("test.cardGridDescription1")}</p>
+        </a>
+        <a slot="upper-row" href={`/${lang}/blog`} class="card">
+          <div class="flex items-baseline justify-between">
+            <h4>{t("test.cardGridTitle2")}</h4>
+            <i><img src="../../../public/icons/link.svg" class="w-5" /></i>
+          </div>
+          <p>{t("test.cardGridDescription2")}</p>
+        </a>
+        <div slot="lower-row" class="card">
+          <h4>{t("test.cardGridTitle3")}</h4>
+          <p class="m-0 mt-1">{t("test.cardGridDescription3")}</p>
+        </div>
+        <a slot="lower-row" href={`/${lang}/faq`} class="card">
+          <div class="flex items-baseline justify-between">
+            <h4>{t("test.cardGridTitle4")}</h4>
+            <i><img src="../../../public/icons/link.svg" class="w-5" /></i>
+          </div>
+          <p>{t("test.cardGridDescription4")}</p>
+        </a>
+        <div slot="lower-row" class="card">
+          <h4>{t("test.cardGridTitle5")}</h4>
+          <p>{t("test.cardGridDescription5")}</p>
+        </div>
+      </CardGrid>
+    </section>
+
+    <section>
+      <h2>{t("test.fullWidthBannerTitle")}</h2>
+      <p>{t("test.fullWidthBannerDescription")}</p>
+      <FullWidthBanner title="test.title" description="test.description" />
+    </section>
+  </main>
+</Layout>

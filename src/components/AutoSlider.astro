@@ -2,12 +2,14 @@
 const { title, description } = Astro.props;
 ---
 
-<section class="md:slider-container relative overflow-hidden">
+<section class="relative overflow-hidden">
   {title ? <h2>{title}</h2> : ""}
   {description ? <p>{description}</p> : ""}
-  <ul
-    class="slider md:motion-safe:animate-slider lg:motion-safe:animate-slider-md xl:motion-safe:animate-slider-lg w-auto py-5 overflow-x-auto md:overflow-visible flex flex-nowrap min-w-full shrink-0 items-stretch gap-10 snap-x snap-mandatory"
-  >
-    <slot />
-  </ul>
+  <div class="relative md:slider-container">
+    <ul
+      class="slider md:motion-safe:animate-slider lg:motion-safe:animate-slider-md xl:motion-safe:animate-slider-lg w-auto py-5 overflow-x-auto md:overflow-visible flex flex-nowrap min-w-full shrink-0 items-stretch gap-10 snap-x snap-mandatory"
+    >
+      <slot />
+    </ul>
+  </div>
 </section>

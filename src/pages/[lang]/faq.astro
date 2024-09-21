@@ -1,5 +1,5 @@
 ---
-import FaqItem from "../../components/FaqItem.astro";
+import DropdownItem from "../../components/DropdownItem.astro";
 import { getLangFromUrl, useTranslations, LOCALES } from "../../i18n/utils";
 import Layout from "../../layouts/Layout.astro";
 
@@ -22,9 +22,9 @@ export async function getStaticPaths() {
     </section>
 
     <section class="flex flex-col gap-2">
-      <FaqItem question="faq.why" answer="faq.reason_why" />
-      <FaqItem question="faq.who" answer="faq.reason_who" />
-      <FaqItem question="faq.tech" answer="faq.reason_tech" />
+      <DropdownItem title="faq.why" content="faq.reason_why" />
+      <DropdownItem title="faq.who" content="faq.reason_who" />
+      <DropdownItem title="faq.tech" content="faq.reason_tech" />
       <a
         data-astro-prefetch
         href={`/${lang}/contact`}

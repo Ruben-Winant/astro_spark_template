@@ -1,14 +1,18 @@
 ---
+import { useTranslations, getLangFromUrl } from "../i18n/utils";
+("../i18n/utils.ts");
+
 const { title, description } = Astro.props;
+const t = useTranslations(getLangFromUrl(Astro.url));
 ---
 
 <section>
-  {title ? <h2>{title}</h2> : ""}
-  {description ? <p>{description}</p> : ""}
-  <div class="flex flex-col md:flex-row columns-1 md:columns-2 lg:columns-3 gap-4 mb-4">
+  {title ? <h2>{t(title)}</h2> : ""}
+  {description ? <p>{t(description)}</p> : ""}
+  <div class="flex flex-col md:flex-row columns-auto gap-4 mb-4">
     <slot name="upper-row" />
   </div>
-  <div class="flex flex-col md:flex-row columns-1 md:columns-2 lg:columns-3 gap-4">
+  <div class="flex flex-col md:flex-row columns-auto gap-4">
     <slot name="lower-row" />
   </div>
 </section>
