@@ -32,7 +32,7 @@ export async function getStaticPaths() {
         <p>{t("hero.description")}</p>
       </div>
       <div class="relative hidden md:block">
-        <img src="/favicon.svg" alt="spark logo" />
+        <img src="/favicon.svg" alt="spark logo" width="182" height="242" />
       </div>
     </section>
 
@@ -40,28 +40,60 @@ export async function getStaticPaths() {
       <a slot="upper-row" href="#" class="card">
         <div class="flex items-baseline justify-between">
           <h3>{t("test.cardGridTitle1")}</h3>
-          <i><img src="/icons/link.svg" alt="" class="w-5" /></i>
+          <i
+            ><img
+              src="/icons/link.svg"
+              alt=""
+              class="w-5"
+              width="20"
+              height="20"
+            /></i
+          >
         </div>
         <p>{t("test.cardGridDescription1")}</p>
       </a>
       <a slot="upper-row" href={`/${lang}/blog/`} class="card">
         <div class="flex items-baseline justify-between">
           <h3>{t("test.cardGridTitle2")}</h3>
-          <i><img src="/icons/link.svg" alt="" class="w-5" /></i>
+          <i
+            ><img
+              src="/icons/link.svg"
+              alt=""
+              class="w-5"
+              width="20"
+              height="20"
+            /></i
+          >
         </div>
         <p>{t("test.cardGridDescription2")}</p>
       </a>
       <a slot="lower-row" href={`/${lang}/components`} class="card">
         <div class="flex items-baseline justify-between">
           <h3>{t("test.cardGridTitle3")}</h3>
-          <i><img src="/icons/link.svg" alt="" class="w-5" /></i>
+          <i
+            ><img
+              src="/icons/link.svg"
+              alt=""
+              class="w-5"
+              width="20"
+              height="20"
+            /></i
+          >
         </div>
         <p class="m-0 mt-1">{t("test.cardGridDescription3")}</p>
       </a>
       <a slot="lower-row" href={`/${lang}/faq`} class="card">
         <div class="flex items-baseline justify-between">
           <h3>{t("test.cardGridTitle4")}</h3>
-          <i><img src="/icons/link.svg" alt="" class="w-5" /></i>
+          <i
+            ><img
+              src="/icons/link.svg"
+              alt=""
+              class="w-5"
+              width="20"
+              height="20"
+            /></i
+          >
         </div>
         <p>{t("test.cardGridDescription4")}</p>
       </a>
