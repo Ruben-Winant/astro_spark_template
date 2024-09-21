@@ -1,14 +1,94 @@
 ---
-title: NL test blog
+title: Inleiding tot MDX en Markdown
 date: 21/09/2024
 lang: nl
-slug: nl-test-blog
+slug: Inleiding-tot-MDX-en-Markdown
+author: Ruben Winant
 ---
 
 # {frontmatter.title}
 
+Als je nieuw bent in webontwikkeling of contentcreatie, ben je misschien twee termen tegengekomen: **Markdown** en **MDX**. In deze post leggen we de basis van beide uit en laten we zien hoe je aan de slag kunt.
 
-## This is an example Blog
+## Wat is Markdown?
 
-As you'll see in the code this whole article has been written using MDX, basically markdown with the power of code
+Markdown is een lichtgewicht opmaaktaal waarmee je tekst kunt opmaken met de syntaxis van platte tekst. Het wordt veel gebruikt voor het schrijven van documentatie, blog posts en README bestanden.
 
+Hier is een voorbeeld van Markdown syntaxis:
+
+- **Bold text**: `**Bold**`
+- *Italic text*: `*Italic*`
+- [Links](https://example.com): `[Link text](https://example.com)`
+- Headings:
+  - `# Heading 1`
+  - `## Heading 2`
+  - `### Heading 3`
+
+### Voorbeeld
+
+Hier is een voorbeeld van een Markdown fragment:
+
+```Md
+# Mijn eerste blogpost
+
+Welkom op mijn blog! Dit is een voorbeeld van een Markdown-bestand. Hieronder staat een lijst:
+
+- Item 1
+- Item 2
+- Item 3
+
+```
+
+Bij het renderen ziet dit er als volgt uit:
+
+# Mijn eerste blogpost
+
+Welkom op mijn blog! Dit is een voorbeeld van een Markdown-bestand. Hieronder staat een lijst:
+
+- Item 1
+- Item 2
+- Item 3
+
+## Wat is MDX?
+
+MDX is een uitbreiding van Markdown waarmee je JSX (JavaScript XML) rechtstreeks in je Markdown-bestanden kunt invoegen. Dit maakt het mogelijk om standaard Markdown-inhoud te mengen met dynamische componenten, waardoor het een krachtig hulpmiddel is voor moderne webontwikkeling.
+
+Als je echter net begint, kun je MDX net als Markdown gebruiken zonder JSX-componenten. Het werkt prima met de basis.
+
+### Voorbeeld
+
+Zo ziet een eenvoudig MDX-bestand eruit (zonder aangepaste componenten):
+
+```mdx
+---
+title: "Mijn MDX post"
+---
+
+# Hello World
+
+Dit is een voorbeeld van een MDX-post. Het gedraagt zich net als Markdown, maar ik kan later componenten toevoegen als dat nodig is.
+
+Waarom MDX gebruiken?
+
+Het belangrijkste voordeel van MDX is dat het je de flexibiliteit geeft om eenvoudige inhoud te schrijven met Markdown, maar later dynamische inhoud mogelijk maakt. Het wordt vaak gebruikt in statische site generators zoals Astro, Next.js en Gatsby.
+Aan de slag
+
+Om een MDX basispost te maken, hoef je alleen maar
+
+    Een .mdx bestand aanmaken.
+    Markdown inhoud schrijven zoals gewoonlijk.
+    Eventueel kun je later JSX componenten toevoegen als je vertrouwd bent met de basis.
+
+Dat is alles wat je nodig hebt om aan de slag te gaan met MDX en Markdown. In toekomstige posts zullen we dieper ingaan op hoe je MDX kunt gebruiken om dynamische en interactieve blog posts te maken.
+
+Blijf kijken voor meer tips en tutorials!
+```
+
+### Belangrijkste elementen:
+- **Basis Markdown-functies** zoals koppen, vet, cursief, lijsten en links.
+
+- **MDX frontmatter** (`--`) voor metadata (titel, beschrijving, enz.).
+
+- Geen aangepaste componenten of JSX, zodat compatibiliteit met verschillende MDX-parsers gegarandeerd is.
+
+Deze post behandelt de basis en werkt probleemloos zonder aangepaste componenten of geavanceerde functies. Je kunt het gebruiken als basis voor het leren of delen van MDX en Markdown tips.

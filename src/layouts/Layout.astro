@@ -66,6 +66,15 @@ const { title, lang, description } = Astro.props;
         container-type: inline-size;
       }
 
+      .blog-container > :is(h1, h2, h3, h4, h5, h6) {
+        @apply mt-8;
+      }
+
+      pre {
+        padding: 2rem;
+        margin: 1rem 0;
+      }
+
       h1,
       h2,
       h3,
@@ -185,6 +194,10 @@ const { title, lang, description } = Astro.props;
 
       .card {
         @apply bg-[length:200%_200%] bg-elevated hover:bg-gradient-to-tr from-elevated from-25% via-primary/15 via-75% to-secondary/15 rounded-md overflow-hidden relative p-4 border border-elevated hover:border-secondary/10 transition-all hover:shadow-md w-full flex flex-col justify-start;
+      }
+
+      .container {
+        @apply py-5;
       }
     }
   </style>

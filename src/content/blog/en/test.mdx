@@ -1,14 +1,95 @@
 ---
-title: EN test blog
+title: Introduction to MDX and Markdown
 date: 21/09/2024
 lang: en
-slug: EN-test-blog
+slug: Introduction-to-MDX-and-Markdown
+author: Ruben Winant
 ---
 
 # {frontmatter.title}
 
+If you're new to web development or content creation, you might have come across two terms: **Markdown** and **MDX**. In this post, we’ll explain the basics of both and show you how to get started.
 
-## This is an example Blog
+## What is Markdown?
 
-As you'll see in the code this whole article has been written using MDX, basically markdown with the power of code
+Markdown is a lightweight markup language that allows you to format text using plain text syntax. It's widely used for writing documentation, blog posts, and README files.
+
+Here's an example of Markdown syntax:
+
+- **Bold text**: `**Bold**`
+- *Italic text*: `*Italic*`
+- [Links](https://example.com): `[Link text](https://example.com)`
+- Headings:
+  - `# Heading 1`
+  - `## Heading 2`
+  - `### Heading 3`
+
+### Example
+
+Here’s a sample Markdown snippet:
+
+```Md
+# My First Blog Post
+
+Welcome to my blog! This is an example of a Markdown file. Below is a list:
+
+- Item 1
+- Item 2
+- Item 3
+
+```
+
+When rendered, this will look like:
+
+# My First Blog Post
+
+Welcome to my blog! This is an example of a Markdown file. Below is a list:
+
+- Item 1
+- Item 2
+- Item 3
+
+## What is MDX?
+
+MDX is an extension of Markdown that allows you to embed JSX (JavaScript XML) directly into your Markdown files. This makes it possible to mix standard Markdown content with dynamic components, making it a powerful tool for modern web development.
+
+However, if you're just starting out, you can use MDX exactly like Markdown without any JSX components. It works just fine with the basics.
+
+### Example
+
+Here’s what a simple MDX file looks like (without custom components):
+
+```mdx
+---
+title: "My MDX Post"
+---
+
+# Hello World
+
+This is an example MDX post. It behaves just like Markdown, but I can later add components if needed.
+
+Why Use MDX?
+
+The main advantage of MDX is that it gives you the flexibility to write simple content using Markdown but allows for dynamic content later on. It's commonly used in static site generators like Astro, Next.js, and Gatsby.
+Getting Started
+
+To create a basic MDX post, you just need to:
+
+    Create a .mdx file.
+    Write Markdown content as usual.
+    Optionally, add JSX components later when you’re comfortable with the basics.
+
+That’s all you need to get started with MDX and Markdown. In future posts, we’ll dive deeper into how you can use MDX to create dynamic and interactive blog posts.
+
+Stay tuned for more tips and tutorials!
+
+markdown
+
+
+### Key Elements:
+- **Basic Markdown features** like headings, bold, italics, lists, and links.
+- **MDX frontmatter** (`---`) for metadata (title, description, etc.).
+- No custom components or JSX, ensuring compatibility across different MDX parsers.
+
+This post covers the basics and will work smoothly without custom components or advanced features. You can use it as a foundation for learning or sharing MDX and Markdown tips.
 

@@ -1,0 +1,94 @@
+---
+title : Introduction à MDX et Markdown
+date : 21/09/2024
+lang : fr
+slug : Introduction-à-MDX-et-Markdown
+auteur : Ruben Winant
+---
+
+# {frontmatter.title}
+
+Si vous êtes novice en matière de développement web ou de création de contenu, vous avez peut-être déjà rencontré deux termes : **Markdown** et **MDX**. Dans ce billet, nous allons vous expliquer les bases de ces deux termes et vous montrer comment commencer.
+
+## Qu'est-ce que Markdown ?
+
+Markdown est un langage de balisage léger qui vous permet de formater du texte avec la syntaxe du texte brut. Il est largement utilisé pour rédiger de la documentation, des articles de blog et des fichiers README.
+
+Voici un exemple de syntaxe Markdown :
+
+- **Texte en gras** : `**Bold**`
+- *Texte en italique* : `*Italique*`
+- Liens](https://example.com) : `[Texte du lien](https://example.com)`
+- Rubriques :
+  - `# Titre 1`
+  - `## Titre 2`
+  - `### Titre 3`
+
+### Exemple
+
+Voici un exemple d'extrait Markdown :
+
+```Md
+# Mon premier article de blog
+
+Bienvenue sur mon blog ! Voici un exemple de fichier Markdown. Voici une liste :
+
+- Point 1
+- Point 2
+- Point 3
+
+```
+
+Lors du rendu, cela ressemble à ceci :
+
+# Mon premier billet de blog
+
+Bienvenue sur mon blog ! Voici un exemple de fichier Markdown. Voici une liste :
+
+- Élément 1
+- Point 2
+- Élément 3
+
+## Qu'est-ce que MDX ?
+
+MDX est une extension de Markdown qui vous permet d'insérer du JSX (JavaScript XML) directement dans vos fichiers Markdown. Cela vous permet de mélanger du contenu Markdown standard avec des composants dynamiques, ce qui en fait un outil puissant pour le développement web moderne.
+
+Toutefois, si vous débutez, vous pouvez utiliser MDX comme Markdown sans composants JSX. Cela fonctionne très bien avec les éléments de base.
+
+### Exemple
+
+Voici à quoi ressemble un fichier MDX simple (sans composants personnalisés) :
+
+```mdx
+---
+title : « Mon billet MDX »
+---
+
+# Hello World
+
+Voici un exemple de message MDX. Il se comporte comme du Markdown, mais je peux ajouter des composants plus tard si nécessaire.
+
+Pourquoi utiliser MDX ?
+
+Le principal avantage de MDX est qu'il vous donne la flexibilité d'écrire un contenu simple avec Markdown, tout en permettant un contenu dynamique plus tard. Il est souvent utilisé dans les générateurs de sites statiques tels que Astro, Next.js et Gatsby.
+Pour commencer
+
+Pour créer un billet de base MDX, il suffit de
+
+    Créer un fichier .mdx.
+    Écrire du contenu Markdown comme d'habitude.
+    Optionnellement, vous pouvez ajouter des composants JSX plus tard si vous êtes familier avec les bases.
+
+C'est tout ce dont vous avez besoin pour commencer à utiliser MDX et Markdown. Dans les prochains articles, nous verrons plus en détail comment utiliser MDX pour créer des articles de blog dynamiques et interactifs.
+
+Restez à l'écoute pour d'autres conseils et tutoriels !
+```
+
+### Éléments clés :
+- **Fonctions de base de Markdown** telles que les titres, le gras, l'italique, les listes et les liens.
+
+- **Matière frontale MDX** (`--`) pour les métadonnées (titre, description, etc.).
+
+- Pas de composants personnalisés ni de JSX, ce qui garantit la compatibilité avec les différents analyseurs MDX.
+
+Ce billet couvre les bases et fonctionne sans problème sans composants personnalisés ni fonctionnalités avancées. Vous pouvez l'utiliser comme base pour apprendre ou partager des astuces MDX et Markdown.
