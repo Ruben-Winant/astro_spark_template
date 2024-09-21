@@ -50,15 +50,28 @@ const { title, lang, description } = Astro.props;
         font-family: "OpenSans", system-ui, sans-serif;
       }
 
+      main {
+        min-height: 85dvh;
+      }
+
       header {
         display: inline;
       }
 
-      header, footer, main, section, article {
+      header,
+      footer,
+      main,
+      section,
+      article {
         container-type: inline-size;
       }
 
-      h1,h2,h3,h4,h5,h6 {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
         @apply font-raleway leading-tight mb-4 text-balance;
       }
 
@@ -94,7 +107,9 @@ const { title, lang, description } = Astro.props;
         @apply leading-relaxed mb-2;
       }
 
-      p, li, figcaption {
+      p,
+      li,
+      figcaption {
         max-width: 65ch;
         text-wrap: pretty;
       }
@@ -143,26 +158,26 @@ const { title, lang, description } = Astro.props;
       }
 
       .slider-container:before {
-          content: "";
-          position: absolute;
-          height: 80%;
-          bottom: 0;
-          left: 0;
-          width: 80px;
-          background: linear-gradient(to right, #FFFFFF, transparent);
-          z-index: 10;
+        content: "";
+        position: absolute;
+        height: 80%;
+        bottom: 0;
+        left: 0;
+        width: 80px;
+        background: linear-gradient(to right, #ffffff, transparent);
+        z-index: 10;
       }
 
-        .slider-container:after {
-            content: "";
-            position: absolute;
-            height: 80%;
-            bottom: 0;
-            right: 0;
-            width: 80px;
-            background: linear-gradient(to left, #FFFFFF, transparent);
-            z-index: 10;
-        }
+      .slider-container:after {
+        content: "";
+        position: absolute;
+        height: 80%;
+        bottom: 0;
+        right: 0;
+        width: 80px;
+        background: linear-gradient(to left, #ffffff, transparent);
+        z-index: 10;
+      }
 
       .slider:hover {
         animation-play-state: paused;

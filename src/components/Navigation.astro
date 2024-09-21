@@ -5,7 +5,10 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<nav class="container my-4 relative bg-white z-[100]" x-data="{ expanded: false }">
+<nav
+  class="container my-4 relative bg-white z-[100]"
+  x-data="{ expanded: false }"
+>
   <ul class="flex items-center justify-center gap-4 w-full z-10">
     <li class="mr-auto">
       <a data-astro-prefetch href={`/${lang}/`} class="flex gap-1 font-semibold"
@@ -15,6 +18,11 @@ const t = useTranslations(lang);
           width="20"
           height="20"
         />Spark</a
+      >
+    </li>
+    <li class="hidden md:block">
+      <a data-astro-prefetch class="link" href={`/${lang}/blog/`}
+        >{t("nav.blog")}</a
       >
     </li>
     <li class="hidden md:block">
@@ -92,6 +100,13 @@ const t = useTranslations(lang);
     x-collapse
     class="transition-all flex flex-col justify-center items-center gap-2 pt-2 pb-4 drop-shadow-md bg-white absolute -left-4 -right-4 md:hidden"
   >
+    <li class="flex w-full">
+      <a
+        data-astro-prefetch
+        class="link py-2 mx-auto w-full text-center"
+        href={`/${lang}/blog/`}>{t("nav.blog")}</a
+      >
+    </li>
     <li class="flex w-full">
       <a
         data-astro-prefetch

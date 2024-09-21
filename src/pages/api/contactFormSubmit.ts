@@ -13,12 +13,12 @@ export const POST: APIRoute = async ({ request }) => {
 
   const t = useTranslations(lang);
 
-  const EMAIL: string = "ruben.winant@hotmail.com";
+  const EMAIL: string = "example@hotmail.com";
   const mailerSend = new MailerSend({
     apiKey: import.meta.env.MAILERSEND_API_KEY ?? "",
   });
   const sentFrom = new Sender(
-    "MS_vl9QaI@trial-jy7zpl9xjv5l5vx6.mlsender.net",
+    "sender@hotmail.com",
     "Spark",
   );
   const recipients = [new Recipient(EMAIL, "Ruben Winant")];
@@ -83,7 +83,7 @@ export const POST: APIRoute = async ({ request }) => {
     .setFrom(sentFrom)
     .setTo(recipients)
     .setSubject(sanitizedData.topic)
-    .setTemplateId("3vz9dlev9x64kj50")
+    .setTemplateId("insert template id")
     .setVariables([
       {
         email: EMAIL,

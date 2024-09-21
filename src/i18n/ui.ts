@@ -20,6 +20,7 @@ export const ui = {
     "nav.components": "Components",
     "nav.faq": "faq",
     "nav.contact": "contact",
+    "nav.blog": "blog",
     "footer.copyright":
       "Spark Theme. All rights reserved. This project is independent of and not endorsed or sponsored by Astro or Tailwind Labs.",
     "footer.createdBy": "Created by",
@@ -84,6 +85,7 @@ export const ui = {
     "nav.components": "componenten",
     "nav.faq": "faq",
     "nav.contact": "contact",
+    "nav.blog": "blog",
     "footer.copyright":
       "Spark Thema. Alle rechten voorbehouden. Dit project is onafhankelijk van en wordt niet onderschreven of gesponsord door Astro of Tailwind Labs.",
     "footer.createdBy": "Gemaakt door",
@@ -148,6 +150,7 @@ export const ui = {
     "nav.components": "Composants",
     "nav.faq": "faq",
     "nav.contact": "contact",
+    "nav.blog": "blog",
     "footer.copyright":
       "Spark Theme. Tous droits réservés. Ce projet est indépendant d'Astro ou de Tailwind Labs et n'est ni approuvé ni sponsorisé par eux.",
     "footer.createdBy": "Créé par",

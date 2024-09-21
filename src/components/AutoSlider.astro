@@ -2,7 +2,7 @@
 const { title, description } = Astro.props;
 ---
 
-<section class="slider-container relative overflow-hidden">
+<section class="md:slider-container relative overflow-hidden">
   {title ? <h2>{title}</h2> : ""}
   {description ? <p>{description}</p> : ""}
   <ul

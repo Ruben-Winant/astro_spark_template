@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../../layouts/Layout.astro";
+import { getLangFromUrl } from "../../../i18n/utils";
+import { calculateReadingTime } from "./utils";
+
+const lang = getLangFromUrl(Astro.url);
+const blogPosts = await getCollection("blog", ({ data }) => {
+  return data.lang === lang;
+});
+---
+
+<Layout title={`Blog`} lang={lang}>
+  <main class="container mx-auto">
+    <h1>Blog</h1>
+    <ul>
+      {
+        blogPosts.map((p) => (
+          <li>
+            <a class="link flex justify-between items-center" href={p.slug}>
+              <span>{p.data.title}</span>
+              <div class="hidden md:block">
+                <span>
+                  {calculateReadingTime(p.body)} min - {p.data.date}
+                </span>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>

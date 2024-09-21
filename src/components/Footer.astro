@@ -18,15 +18,10 @@ const t = useTranslations(lang as UiType);
           alt="spark logo"
           width="20"
           height="20"
-          loading="lazy"
+          loading="eager"
         />Spark</a
       >
       <LangSwitch />
-    </div>
-    <div class="grid grid-cols-3">
-      <div></div>
-      <div></div>
-      <div></div>
     </div>
     <small class="text-white">
       &copy; {t("footer.copyright", new Date().getFullYear())}
