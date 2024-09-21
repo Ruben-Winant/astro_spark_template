@@ -17,18 +17,13 @@ interface Props {
 
 const canonicalPathname = pathNameIsInLanguage(
   Astro.url.pathname,
-  DEFAULT_LOCALE
+  DEFAULT_LOCALE,
 )
   ? Astro.url.pathname
   : getLocalizedPathname(Astro.url.pathname, DEFAULT_LOCALE);
 const canonicalURL = new URL(canonicalPathname, Astro.site);
 
-const {
-  lang,
-  title,
-  description,
-  image = "/blog-placeholder-1.jpg",
-} = Astro.props;
+const { lang, title, description, image = "/favicon.svg" } = Astro.props;
 
 const alternateLang = Object.keys(LOCALES);
 const alternateLinks = alternateLang.map((lang: string) => {
