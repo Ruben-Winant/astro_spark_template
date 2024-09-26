@@ -105,7 +105,7 @@ export const ui = {
       "A responsive, interactive list item (<li>) that functions as an icon card with an image and title, using Tailwind CSS for styling.",
   },
   nl: {
-    "layout.test": "hallo",
+    "layout.test": "Spark",
     "hero.title": " het beste minimale Astro starter template!",
     "hero.description":
       "Start astro projecten eenvoudig en met stijl. Minimalistisch design, maximale functionaliteit. Of je nu ervaren bent of nieuw, Spark vereenvoudigt je ontwikkeling voor prachtige astro websites.",
@@ -212,7 +212,7 @@ export const ui = {
       "Een responsief, interactief lijst item (<li>) dat functioneert als een pictogramkaart met een afbeelding en titel, met behulp van Tailwind CSS voor styling.",
   },
   fr: {
-    "layout.test": "bonjour",
+    "layout.test": "Spark",
     "hero.title": " le meilleur modèle de démarrage Astro minimal !",
     "hero.description":
       "Lancez vos projets astro avec facilité et style. Design minimaliste, fonctionnalité maximale. Que vous soyez expérimenté ou novice, Spark simplifie votre développement pour des sites web astro époustouflants.",
