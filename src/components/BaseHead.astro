@@ -12,7 +12,6 @@ interface Props {
   title: string;
   description: string;
   image?: string;
-  lang: string;
 }
 
 const canonicalPathname = pathNameIsInLanguage(
@@ -23,7 +22,7 @@ const canonicalPathname = pathNameIsInLanguage(
   : getLocalizedPathname(Astro.url.pathname, DEFAULT_LOCALE);
 const canonicalURL = new URL(canonicalPathname, Astro.site);
 
-const { lang, title, description, image = "/favicon.svg" } = Astro.props;
+const { title, description, image = "/favicon.svg" } = Astro.props;
 
 const alternateLang = Object.keys(LOCALES);
 const alternateLinks = alternateLang.map((lang: string) => {

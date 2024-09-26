@@ -9,7 +9,7 @@ const { title, lang, description } = Astro.props;
 <!doctype html>
 <html lang={lang}>
   <head>
-    <BaseHead lang={lang} title={title} description={description} />
+    <BaseHead title={title} description={description} />
   </head>
   <header>
     <Navigation />
@@ -206,6 +206,36 @@ const { title, lang, description } = Astro.props;
 
       .container {
         @apply py-5;
+      }
+
+      .scroller {
+        --scrollbar-color-thumb: hotpink;
+        --scrollbar-color-track: blue;
+        --scrollbar-width: thin;
+        --scrollbar-width-legacy: 10px;
+      }
+
+      /* Modern browsers with `scrollbar-*` support */
+      @supports (scrollbar-width: auto) {
+        .scroller {
+          scrollbar-color: var(--scrollbar-color-thumb)
+            var(--scrollbar-color-track);
+          scrollbar-width: var(--scrollbar-width);
+        }
+      }
+
+      /* Legacy browsers with `::-webkit-scrollbar-*` support */
+      @supports selector(::-webkit-scrollbar) {
+        .scroller::-webkit-scrollbar-thumb {
+          background: var(--scrollbar-color-thumb);
+        }
+        .scroller::-webkit-scrollbar-track {
+          background: var(--scrollbar-color-track);
+        }
+        .scroller::-webkit-scrollbar {
+          max-width: var(--scrollbar-width-legacy);
+          max-height: var(--scrollbar-width-legacy);
+        }
       }
     }
   </style>
